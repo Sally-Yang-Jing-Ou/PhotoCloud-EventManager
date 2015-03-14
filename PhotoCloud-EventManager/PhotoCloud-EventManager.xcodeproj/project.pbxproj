@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AB8FD0F1AB49F6100FB5B75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8FD0E1AB49F6100FB5B75 /* AppDelegate.swift */; };
+		5AB8FD111AB49F6100FB5B75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8FD101AB49F6100FB5B75 /* ViewController.swift */; };
+		5AB8FD141AB49F6100FB5B75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8FD121AB49F6100FB5B75 /* Main.storyboard */; };
+		5AB8FD161AB49F6100FB5B75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8FD151AB49F6100FB5B75 /* Images.xcassets */; };
+		5AB8FD191AB49F6100FB5B75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8FD171AB49F6100FB5B75 /* LaunchScreen.xib */; };
+		5AB8FD251AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AB8FD1F1AB49F6100FB5B75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AB8FD011AB49F6000FB5B75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AB8FD081AB49F6000FB5B75;
+			remoteInfo = "PhotoCloud-EventManager";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5AB8FD091AB49F6000FB5B75 /* PhotoCloud-EventManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhotoCloud-EventManager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB8FD0D1AB49F6100FB5B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AB8FD0E1AB49F6100FB5B75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5AB8FD101AB49F6100FB5B75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5AB8FD131AB49F6100FB5B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5AB8FD151AB49F6100FB5B75 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5AB8FD181AB49F6100FB5B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5AB8FD1E1AB49F6100FB5B75 /* PhotoCloud-EventManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PhotoCloud-EventManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB8FD231AB49F6100FB5B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCloud_EventManagerTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AB8FD061AB49F6000FB5B75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8FD1B1AB49F6100FB5B75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AB8FD001AB49F6000FB5B75 = {
+			isa = PBXGroup;
+			children = (
+				5AB8FD0B1AB49F6100FB5B75 /* PhotoCloud-EventManager */,
+				5AB8FD211AB49F6100FB5B75 /* PhotoCloud-EventManagerTests */,
+				5AB8FD0A1AB49F6000FB5B75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5AB8FD0A1AB49F6000FB5B75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8FD091AB49F6000FB5B75 /* PhotoCloud-EventManager.app */,
+				5AB8FD1E1AB49F6100FB5B75 /* PhotoCloud-EventManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AB8FD0B1AB49F6100FB5B75 /* PhotoCloud-EventManager */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8FD0E1AB49F6100FB5B75 /* AppDelegate.swift */,
+				5AB8FD101AB49F6100FB5B75 /* ViewController.swift */,
+				5AB8FD121AB49F6100FB5B75 /* Main.storyboard */,
+				5AB8FD151AB49F6100FB5B75 /* Images.xcassets */,
+				5AB8FD171AB49F6100FB5B75 /* LaunchScreen.xib */,
+				5AB8FD0C1AB49F6100FB5B75 /* Supporting Files */,
+			);
+			path = "PhotoCloud-EventManager";
+			sourceTree = "<group>";
+		};
+		5AB8FD0C1AB49F6100FB5B75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8FD0D1AB49F6100FB5B75 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AB8FD211AB49F6100FB5B75 /* PhotoCloud-EventManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */,
+				5AB8FD221AB49F6100FB5B75 /* Supporting Files */,
+			);
+			path = "PhotoCloud-EventManagerTests";
+			sourceTree = "<group>";
+		};
+		5AB8FD221AB49F6100FB5B75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8FD231AB49F6100FB5B75 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AB8FD081AB49F6000FB5B75 /* PhotoCloud-EventManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AB8FD281AB49F6100FB5B75 /* Build configuration list for PBXNativeTarget "PhotoCloud-EventManager" */;
+			buildPhases = (
+				5AB8FD051AB49F6000FB5B75 /* Sources */,
+				5AB8FD061AB49F6000FB5B75 /* Frameworks */,
+				5AB8FD071AB49F6000FB5B75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PhotoCloud-EventManager";
+			productName = "PhotoCloud-EventManager";
+			productReference = 5AB8FD091AB49F6000FB5B75 /* PhotoCloud-EventManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AB8FD1D1AB49F6100FB5B75 /* PhotoCloud-EventManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AB8FD2B1AB49F6100FB5B75 /* Build configuration list for PBXNativeTarget "PhotoCloud-EventManagerTests" */;
+			buildPhases = (
+				5AB8FD1A1AB49F6100FB5B75 /* Sources */,
+				5AB8FD1B1AB49F6100FB5B75 /* Frameworks */,
+				5AB8FD1C1AB49F6100FB5B75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AB8FD201AB49F6100FB5B75 /* PBXTargetDependency */,
+			);
+			name = "PhotoCloud-EventManagerTests";
+			productName = "PhotoCloud-EventManagerTests";
+			productReference = 5AB8FD1E1AB49F6100FB5B75 /* PhotoCloud-EventManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AB8FD011AB49F6000FB5B75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Sally Yang Jing Ou";
+				TargetAttributes = {
+					5AB8FD081AB49F6000FB5B75 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					5AB8FD1D1AB49F6100FB5B75 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 5AB8FD081AB49F6000FB5B75;
+					};
+				};
+			};
+			buildConfigurationList = 5AB8FD041AB49F6000FB5B75 /* Build configuration list for PBXProject "PhotoCloud-EventManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5AB8FD001AB49F6000FB5B75;
+			productRefGroup = 5AB8FD0A1AB49F6000FB5B75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AB8FD081AB49F6000FB5B75 /* PhotoCloud-EventManager */,
+				5AB8FD1D1AB49F6100FB5B75 /* PhotoCloud-EventManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AB8FD071AB49F6000FB5B75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB8FD141AB49F6100FB5B75 /* Main.storyboard in Resources */,
+				5AB8FD191AB49F6100FB5B75 /* LaunchScreen.xib in Resources */,
+				5AB8FD161AB49F6100FB5B75 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8FD1C1AB49F6100FB5B75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AB8FD051AB49F6000FB5B75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB8FD111AB49F6100FB5B75 /* ViewController.swift in Sources */,
+				5AB8FD0F1AB49F6100FB5B75 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8FD1A1AB49F6100FB5B75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB8FD251AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AB8FD201AB49F6100FB5B75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AB8FD081AB49F6000FB5B75 /* PhotoCloud-EventManager */;
+			targetProxy = 5AB8FD1F1AB49F6100FB5B75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5AB8FD121AB49F6100FB5B75 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AB8FD131AB49F6100FB5B75 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5AB8FD171AB49F6100FB5B75 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AB8FD181AB49F6100FB5B75 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5AB8FD261AB49F6100FB5B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5AB8FD271AB49F6100FB5B75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AB8FD291AB49F6100FB5B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "PhotoCloud-EventManager/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5AB8FD2A1AB49F6100FB5B75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "PhotoCloud-EventManager/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5AB8FD2C1AB49F6100FB5B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PhotoCloud-EventManagerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoCloud-EventManager.app/PhotoCloud-EventManager";
+			};
+			name = Debug;
+		};
+		5AB8FD2D1AB49F6100FB5B75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PhotoCloud-EventManagerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoCloud-EventManager.app/PhotoCloud-EventManager";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AB8FD041AB49F6000FB5B75 /* Build configuration list for PBXProject "PhotoCloud-EventManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB8FD261AB49F6100FB5B75 /* Debug */,
+				5AB8FD271AB49F6100FB5B75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AB8FD281AB49F6100FB5B75 /* Build configuration list for PBXNativeTarget "PhotoCloud-EventManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB8FD291AB49F6100FB5B75 /* Debug */,
+				5AB8FD2A1AB49F6100FB5B75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5AB8FD2B1AB49F6100FB5B75 /* Build configuration list for PBXNativeTarget "PhotoCloud-EventManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB8FD2C1AB49F6100FB5B75 /* Debug */,
+				5AB8FD2D1AB49F6100FB5B75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5AB8FD011AB49F6000FB5B75 /* Project object */;
+}
