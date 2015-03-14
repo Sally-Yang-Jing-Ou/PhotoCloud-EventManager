@@ -36,6 +36,7 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
         view.backgroundColor = UIColor.blueColor();
         cell.backgroundView=view
         return cell
+        
     }
     
     

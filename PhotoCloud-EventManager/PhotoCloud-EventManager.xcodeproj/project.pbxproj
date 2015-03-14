@@ -14,6 +14,7 @@
 		5AB8FD161AB49F6100FB5B75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8FD151AB49F6100FB5B75 /* Images.xcassets */; };
 		5AB8FD191AB49F6100FB5B75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8FD171AB49F6100FB5B75 /* LaunchScreen.xib */; };
 		5AB8FD251AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */; };
+		C568811F1AB4EF6C001073F6 /* EventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C568811D1AB4EF6C001073F6 /* EventsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		5AB8FD1E1AB49F6100FB5B75 /* PhotoCloud-EventManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PhotoCloud-EventManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB8FD231AB49F6100FB5B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCloud_EventManagerTests.swift; sourceTree = "<group>"; };
+		C568811E1AB4EF6C001073F6 /* EventsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				5AB8FD151AB49F6100FB5B75 /* Images.xcassets */,
 				5AB8FD171AB49F6100FB5B75 /* LaunchScreen.xib */,
 				5AB8FD0C1AB49F6100FB5B75 /* Supporting Files */,
+				C568811D1AB4EF6C001073F6 /* EventsModel.xcdatamodeld */,
 			);
 			path = "PhotoCloud-EventManager";
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				5A4BF5831AB4B333003E9E42 /* AllEventsViewController.swift in Sources */,
 				5AB8FD111AB49F6100FB5B75 /* SignInViewController.swift in Sources */,
+				C568811F1AB4EF6C001073F6 /* EventsModel.xcdatamodeld in Sources */,
 				5AB8FD0F1AB49F6100FB5B75 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +427,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C568811D1AB4EF6C001073F6 /* EventsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C568811E1AB4EF6C001073F6 /* EventsModel.xcdatamodel */,
+			);
+			currentVersion = C568811E1AB4EF6C001073F6 /* EventsModel.xcdatamodel */;
+			path = EventsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5AB8FD011AB49F6000FB5B75 /* Project object */;
 }
