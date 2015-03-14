@@ -112,23 +112,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vhs-4H-bKz">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vhs-4H-bKz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.23285550760000001" green="0.66666666669999997" blue="0.52625099399999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4uk-3B-ofC">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="292" height="71"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reuseEventCell" id="4Ko-mG-frD">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reuseEventCell" id="4Ko-mG-frD" customClass="EventCell" customModule="PhotoCloud_EventManager" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="292" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M7s-rM-Ev6" userLabel="EventImage">
+                                                    <rect key="frame" x="9" y="5" width="100" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="pfh-AC-GFc"/>
+                                                        <constraint firstAttribute="width" constant="100" id="xGW-lN-sV8"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHP-Fj-a0C" userLabel="EventName">
+                                                    <rect key="frame" x="129" y="25" width="150" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="FXj-HE-dA8"/>
+                                                        <constraint firstAttribute="width" constant="150" id="sOZ-uQ-P4p"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.08235294118" green="1" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="M7s-rM-Ev6" firstAttribute="top" secondItem="4Ko-mG-frD" secondAttribute="top" constant="5" id="GPL-CS-6uc"/>
+                                            <constraint firstItem="BHP-Fj-a0C" firstAttribute="top" secondItem="4Ko-mG-frD" secondAttribute="top" constant="25" id="SUW-3W-K6c"/>
+                                            <constraint firstItem="M7s-rM-Ev6" firstAttribute="leading" secondItem="4Ko-mG-frD" secondAttribute="leading" constant="9" id="ijS-bV-QZm"/>
+                                            <constraint firstItem="BHP-Fj-a0C" firstAttribute="leading" secondItem="M7s-rM-Ev6" secondAttribute="trailing" constant="20" id="x4M-57-vAh"/>
+                                        </constraints>
+                                        <size key="customSize" width="292" height="71"/>
+                                        <connections>
+                                            <outlet property="eventImageView" destination="M7s-rM-Ev6" id="zJB-Wm-cZ4"/>
+                                            <outlet property="eventNameLabel" destination="BHP-Fj-a0C" id="eb5-pN-Ko2"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -138,6 +170,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vhs-4H-bKz" firstAttribute="top" secondItem="RXD-RZ-r7W" secondAttribute="top" id="CgM-JV-8cK"/>
                             <constraint firstAttribute="trailing" secondItem="vhs-4H-bKz" secondAttribute="trailing" id="MVG-lQ-7B2"/>
@@ -152,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKf-JT-kJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530" y="319"/>
+            <point key="canvasLocation" x="501" y="319"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
