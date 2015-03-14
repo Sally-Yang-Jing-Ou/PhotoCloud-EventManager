@@ -11,6 +11,8 @@ import UIKit
 
 class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     @IBOutlet weak var allEventsCollectionView: UICollectionView?
+    @IBOutlet weak var addEventBarButtonItem: UIBarButtonItem?
+    
     var eventsArray = ["event1", "event2", "event3"]
     
     override func viewDidLoad() {
@@ -32,17 +34,9 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("reuseEventCell", forIndexPath: indexPath) as    EventCell
         cell.eventNameLabel?.text = eventsArray[indexPath.row]
-        
-//        var w = cell.eventImageView?.frame.size.width as CGFloat?
-//        var h = cell.eventImageView?.frame.size.height as CGFloat?
-//
-//        var s:CGSize = CGSizeMake(w, h)
-        
+ 
         cell.eventImageView?.image = getImageWithColor(UIColor.blueColor(), size: CGSizeMake(100, 60))
-        
-//        var view: UIView = UIView()
-//        view.backgroundColor = UIColor.blueColor();
-//        cell.backgroundView=view
+
         return cell
     }
     
@@ -55,10 +49,4 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
         UIGraphicsEndImageContext()
         return image
     }
-
-    
-    
-    
-    
-    
 }
