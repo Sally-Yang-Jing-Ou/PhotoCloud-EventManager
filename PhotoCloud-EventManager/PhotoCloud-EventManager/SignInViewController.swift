@@ -24,9 +24,9 @@ class SignInViewController: UIViewController {
     @IBAction func submitButton (sender: UIButton!){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
-        let allEventsViewController = storyboard?.instantiateViewControllerWithIdentifier("AllEventsViewController") as AllEventsViewController
+        let mainNavigationVC = storyboard?.instantiateViewControllerWithIdentifier("MainNavigationVC") as UINavigationController
 
-        self.presentViewController(allEventsViewController, animated: true, completion: nil)
+        self.presentViewController(mainNavigationVC, animated: true, completion: nil)
     }
 
 

@@ -84,6 +84,22 @@
             </objects>
             <point key="canvasLocation" x="130" y="319"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mbE-3i-03v">
+            <objects>
+                <navigationController storyboardIdentifier="MainNavigationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r36-4M-7SF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mrq-u7-xzw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1Oq-PJ-XAK" kind="relationship" relationship="rootViewController" id="OtB-8k-xej"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LoR-oA-bwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="-402"/>
+        </scene>
         <!--AllEventsViewController-->
         <scene sceneID="Ca6-vg-7C9">
             <objects>
@@ -96,15 +112,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="K." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvi-sV-DNb">
-                                <rect key="frame" x="139" y="213" width="17" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vhs-4H-bKz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4uk-3B-ofC">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reuseEventCell" id="4Ko-mG-frD">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="1Oq-PJ-XAK" id="k90-CF-reh"/>
+                                    <outlet property="delegate" destination="1Oq-PJ-XAK" id="ROL-WP-mRI"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vhs-4H-bKz" firstAttribute="top" secondItem="RXD-RZ-r7W" secondAttribute="top" id="CgM-JV-8cK"/>
+                            <constraint firstAttribute="trailing" secondItem="vhs-4H-bKz" secondAttribute="trailing" id="MVG-lQ-7B2"/>
+                            <constraint firstItem="kqn-vJ-NDI" firstAttribute="top" secondItem="vhs-4H-bKz" secondAttribute="bottom" id="fvL-fR-PHZ"/>
+                            <constraint firstItem="vhs-4H-bKz" firstAttribute="leading" secondItem="RXD-RZ-r7W" secondAttribute="leading" id="jCa-Qc-eKv"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8Tu-68-HQI"/>
+                    <connections>
+                        <outlet property="allEventsCollectionView" destination="vhs-4H-bKz" id="SFN-86-P0v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKf-JT-kJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
