@@ -11,11 +11,12 @@ import UIKit
 
 class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     @IBOutlet weak var allEventsCollectionView: UICollectionView?
+    @IBOutlet weak var addEventBarButtonItem: UIBarButtonItem?
+    
     var eventsArray = ["event1", "event2", "event3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        allEventsCollectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier:"reuseEventCell")
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -31,17 +32,22 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("reuseEventCell", forIndexPath: indexPath) as    UICollectionViewCell
-        var view: UIView = UIView()
-        view.backgroundColor = UIColor.blueColor();
-        cell.backgroundView=view
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("reuseEventCell", forIndexPath: indexPath) as    EventCell
+        cell.eventNameLabel?.text = eventsArray[indexPath.row]
+ 
+        cell.eventImageView?.image = getImageWithColor(UIColor.blueColor(), size: CGSizeMake(100, 60))
+
         return cell
         
     }
     
-    
-    
-    
-    
-    
+    func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+        var rect = CGRectMake(0, 0, size.width, size.height)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
 }

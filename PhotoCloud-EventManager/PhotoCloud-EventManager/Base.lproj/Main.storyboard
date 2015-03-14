@@ -112,23 +112,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vhs-4H-bKz">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vhs-4H-bKz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.23285550760000001" green="0.66666666669999997" blue="0.52625099399999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4uk-3B-ofC">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="292" height="71"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reuseEventCell" id="4Ko-mG-frD">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reuseEventCell" id="4Ko-mG-frD" customClass="EventCell" customModule="PhotoCloud_EventManager" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="292" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M7s-rM-Ev6" userLabel="EventImage">
+                                                    <rect key="frame" x="9" y="5" width="100" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="pfh-AC-GFc"/>
+                                                        <constraint firstAttribute="width" constant="100" id="xGW-lN-sV8"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHP-Fj-a0C" userLabel="EventName">
+                                                    <rect key="frame" x="129" y="25" width="150" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="FXj-HE-dA8"/>
+                                                        <constraint firstAttribute="width" constant="150" id="sOZ-uQ-P4p"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.08235294118" green="1" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="M7s-rM-Ev6" firstAttribute="top" secondItem="4Ko-mG-frD" secondAttribute="top" constant="5" id="GPL-CS-6uc"/>
+                                            <constraint firstItem="BHP-Fj-a0C" firstAttribute="top" secondItem="4Ko-mG-frD" secondAttribute="top" constant="25" id="SUW-3W-K6c"/>
+                                            <constraint firstItem="M7s-rM-Ev6" firstAttribute="leading" secondItem="4Ko-mG-frD" secondAttribute="leading" constant="9" id="ijS-bV-QZm"/>
+                                            <constraint firstItem="BHP-Fj-a0C" firstAttribute="leading" secondItem="M7s-rM-Ev6" secondAttribute="trailing" constant="20" id="x4M-57-vAh"/>
+                                        </constraints>
+                                        <size key="customSize" width="292" height="71"/>
+                                        <connections>
+                                            <outlet property="eventImageView" destination="M7s-rM-Ev6" id="zJB-Wm-cZ4"/>
+                                            <outlet property="eventNameLabel" destination="BHP-Fj-a0C" id="eb5-pN-Ko2"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -138,6 +170,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vhs-4H-bKz" firstAttribute="top" secondItem="RXD-RZ-r7W" secondAttribute="top" id="CgM-JV-8cK"/>
                             <constraint firstAttribute="trailing" secondItem="vhs-4H-bKz" secondAttribute="trailing" id="MVG-lQ-7B2"/>
@@ -145,14 +178,87 @@
                             <constraint firstItem="vhs-4H-bKz" firstAttribute="leading" secondItem="RXD-RZ-r7W" secondAttribute="leading" id="jCa-Qc-eKv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8Tu-68-HQI"/>
+                    <navigationItem key="navigationItem" title="All Events" id="8Tu-68-HQI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LBN-GZ-H5s">
+                            <connections>
+                                <segue destination="eAM-ok-bQl" kind="push" id="adJ-rE-akI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addEventBarButtonItem" destination="LBN-GZ-H5s" id="W2p-Np-Ivk"/>
                         <outlet property="allEventsCollectionView" destination="vhs-4H-bKz" id="SFN-86-P0v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKf-JT-kJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530" y="319"/>
+            <point key="canvasLocation" x="501" y="319"/>
+        </scene>
+        <!--Add Events-->
+        <scene sceneID="IDP-U6-ANw">
+            <objects>
+                <viewController storyboardIdentifier="AddEventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eAM-ok-bQl" customClass="AddEventViewController" customModule="PhotoCloud_EventManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Amr-fj-BhQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="3xe-da-KG7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f5C-L9-4oP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xv0-zn-ggK">
+                                <rect key="frame" x="23" y="165" width="94" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CPR-lQ-QwY" userLabel="EventNameTextField">
+                                <rect key="frame" x="125" y="161" width="179" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpc-kk-7Vk">
+                                <rect key="frame" x="142" y="211" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="iaf-aq-dML">
+                                <rect key="frame" x="0.0" y="240" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="448065568.68660003">
+                                    <!--2015-03-14 22:39:28 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5J-Rc-jcT">
+                                <rect key="frame" x="109" y="440" width="103" height="30"/>
+                                <state key="normal" title="Upload Photos">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadPhotos:" destination="eAM-ok-bQl" eventType="touchUpInside" id="6aS-zk-N1t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCM-JV-i63">
+                                <rect key="frame" x="100" y="497" width="120" height="30"/>
+                                <state key="normal" title="Create this event!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createEevent:" destination="eAM-ok-bQl" eventType="touchUpInside" id="fNA-zj-EIZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Events" id="RDl-xp-67c"/>
+                    <connections>
+                        <outlet property="createEventButton" destination="aCM-JV-i63" id="DTB-PS-QFb"/>
+                        <outlet property="uploadPhotosButton" destination="J5J-Rc-jcT" id="vES-Cu-1ZM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8o-Ys-h8U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901" y="319"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
