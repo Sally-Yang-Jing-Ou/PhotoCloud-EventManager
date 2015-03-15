@@ -8,15 +8,29 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     @IBOutlet weak var allEventsCollectionView: UICollectionView?
     @IBOutlet weak var addEventBarButtonItem: UIBarButtonItem?
     
-    var eventsArray = ["event1", "event2", "event3"]
+    var eventsArray: NSArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        var appDel = (UIApplication.sharedApplication().delegate as AppDelegate)
+        var dataContext = appDel.managedObjectContext
+        
+        var request = NSFetchRequest(entityName: "EventInfo")
+        request.returnsObjectsAsFaults = false
+        
+        var requestError:NSError? = NSError()
+        eventsArray = dataContext?.executeFetchRequest(request, error: &requestError) as NSArray!
+        allEventsCollectionView?.reloadData()
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -32,13 +46,13 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("reuseEventCell", forIndexPath: indexPath) as    EventCell
-        cell.eventNameLabel?.text = eventsArray[indexPath.row]
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("reuseEventCell", forIndexPath: indexPath) as EventCell
+        var currentEvent = eventsArray[indexPath.row] as EventInfo
+        cell.eventNameLabel?.text = currentEvent.name
  
         cell.eventImageView?.image = getImageWithColor(UIColor.blueColor(), size: CGSizeMake(100, 60))
 
         return cell
-        
     }
     
     func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {

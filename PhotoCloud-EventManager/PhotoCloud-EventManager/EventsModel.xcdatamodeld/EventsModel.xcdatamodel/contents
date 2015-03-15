@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="EventInfo" syncable="YES">
+    <entity name="EventInfo" representedClassName="EventInfo" syncable="YES">
         <attribute name="createDate" attributeType="Date" defaultDateTimeInterval="-186217200" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="MyEvent" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventLocation" syncable="YES"/>
     </entity>
-    <entity name="EventLocation" syncable="YES">
+    <entity name="EventLocation" representedClassName="EventLocation" syncable="YES">
         <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="EventInfo" positionX="-3807" positionY="-2862" width="128" height="58"/>
+        <element name="EventInfo" positionX="-3807" positionY="-2862" width="128" height="103"/>
         <element name="EventLocation" positionX="-3665" positionY="-2862" width="128" height="73"/>
     </elements>
 </model>

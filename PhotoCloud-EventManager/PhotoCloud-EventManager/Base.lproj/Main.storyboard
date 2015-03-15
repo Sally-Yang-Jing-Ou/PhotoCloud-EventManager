@@ -253,12 +253,14 @@
                     <navigationItem key="navigationItem" title="Add Events" id="RDl-xp-67c"/>
                     <connections>
                         <outlet property="createEventButton" destination="aCM-JV-i63" id="DTB-PS-QFb"/>
+                        <outlet property="eventDatePicker" destination="iaf-aq-dML" id="ILW-FW-9Z5"/>
+                        <outlet property="eventNameTextField" destination="CPR-lQ-QwY" id="Ebk-T5-QGA"/>
                         <outlet property="uploadPhotosButton" destination="J5J-Rc-jcT" id="vES-Cu-1ZM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8o-Ys-h8U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901" y="319"/>
+            <point key="canvasLocation" x="925" y="319"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
