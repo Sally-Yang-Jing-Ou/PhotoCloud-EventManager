@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class AddEventViewController: UIViewController{
+class AddEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @IBOutlet weak var uploadPhotosButton: UIButton?
     @IBOutlet weak var createEventButton: UIButton?
     
@@ -22,7 +22,12 @@ class AddEventViewController: UIViewController{
     }
     
     @IBAction func uploadPhotos (sender: UIButton!){
-        
+        let picker = UIImagePickerController()
+        picker.sourceType = .PhotoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.PhotoLibrary)!
+        picker.delegate = self
+        picker.allowsEditing = false
+        self.presentViewController(picker, animated: true, completion: nil)
     }
     
     @IBAction func createEevent (sender: UIButton!) {
@@ -40,5 +45,14 @@ class AddEventViewController: UIViewController{
         if(!dataContext.save(&error)){
             NSLog("error")
         }
+    }
+
+    // UIImagePickerControllerDelegate Methods
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
