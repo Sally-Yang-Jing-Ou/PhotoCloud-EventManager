@@ -25,13 +25,16 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func uploadPhotos (sender: UIButton!){
-        let picker = UIImagePickerController()
-        picker.sourceType = .PhotoLibrary
-        picker.mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.PhotoLibrary)!
-        picker.delegate = self
-        picker.allowsEditing = false
-        photoCounter = 0
-        self.presentViewController(picker, animated: true, completion: nil)
+
+        let picker = UzysAssetsPickerController()
+        picker.maximumNumberOfSelectionPhoto = 9
+        picker.maximumNumberOfSelectionVideo = 0
+        //let picker = UIImagePickerController()
+//        picker.sourceType = .PhotoLibrary
+//        picker.mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.PhotoLibrary)!
+//        picker.delegate = self
+//        picker.allowsEditing = false
+         self.presentViewController(picker, animated: true, completion: nil)
     }
     
     @IBAction func createEevent (sender: UIButton!) {
