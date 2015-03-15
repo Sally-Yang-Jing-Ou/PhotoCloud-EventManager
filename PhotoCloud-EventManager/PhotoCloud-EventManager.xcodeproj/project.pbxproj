@@ -20,6 +20,8 @@
 		C5E38C641AB60A4400EB8362 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E38C631AB60A4400EB8362 /* CoreData.framework */; };
 		C5E38C661AB60ECE00EB8362 /* EventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E38C651AB60ECE00EB8362 /* EventInfo.swift */; };
 		C5E38C681AB60F8100EB8362 /* EventLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E38C671AB60F8100EB8362 /* EventLocation.swift */; };
+		C5E38C6A1AB625EA00EB8362 /* CustomSingleEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E38C691AB625EA00EB8362 /* CustomSingleEventViewController.swift */; };
+		C5E38C6C1AB6262A00EB8362 /* SingleEventPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E38C6B1AB6262A00EB8362 /* SingleEventPhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		C5E38C631AB60A4400EB8362 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C5E38C651AB60ECE00EB8362 /* EventInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
 		C5E38C671AB60F8100EB8362 /* EventLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocation.swift; sourceTree = "<group>"; };
+		C5E38C691AB625EA00EB8362 /* CustomSingleEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSingleEventViewController.swift; sourceTree = "<group>"; };
+		C5E38C6B1AB6262A00EB8362 /* SingleEventPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleEventPhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 				5AB8FD101AB49F6100FB5B75 /* SignInViewController.swift */,
 				5A4BF5861AB4EBA5003E9E42 /* AddEventViewController.swift */,
 				5A4BF5821AB4B333003E9E42 /* AllEventsViewController.swift */,
+				C5E38C691AB625EA00EB8362 /* CustomSingleEventViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -85,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				5A4BF5841AB4D5DF003E9E42 /* EventCell.swift */,
+				C5E38C6B1AB6262A00EB8362 /* SingleEventPhotoCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A4BF5851AB4D5DF003E9E42 /* EventCell.swift in Sources */,
+				C5E38C6A1AB625EA00EB8362 /* CustomSingleEventViewController.swift in Sources */,
 				C5E38C681AB60F8100EB8362 /* EventLocation.swift in Sources */,
 				5A4BF5871AB4EBA5003E9E42 /* AddEventViewController.swift in Sources */,
 				5A4BF5831AB4B333003E9E42 /* AllEventsViewController.swift in Sources */,
@@ -258,6 +265,7 @@
 				C568811F1AB4EF6C001073F6 /* EventsModel.xcdatamodeld in Sources */,
 				5AB8FD0F1AB49F6100FB5B75 /* AppDelegate.swift in Sources */,
 				C5E38C661AB60ECE00EB8362 /* EventInfo.swift in Sources */,
+				C5E38C6C1AB6262A00EB8362 /* SingleEventPhotoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
