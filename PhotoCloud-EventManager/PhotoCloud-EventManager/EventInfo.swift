@@ -16,4 +16,5 @@ class EventInfo: NSManagedObject{
     @NSManaged var eventDate: NSDate
     @NSManaged var name: String
     @NSManaged var location: EventLocation
+    @NSManaged var photos: NSData
 }

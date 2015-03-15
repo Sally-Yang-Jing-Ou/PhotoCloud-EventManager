@@ -4,6 +4,7 @@
         <attribute name="createDate" attributeType="Date" defaultDateTimeInterval="-186217200" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="MyEvent" syncable="YES"/>
+        <attribute name="photos" optional="YES" attributeType="Transformable" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventLocation" syncable="YES"/>
     </entity>
     <entity name="EventLocation" representedClassName="EventLocation" syncable="YES">
@@ -11,7 +12,7 @@
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="EventInfo" positionX="-3807" positionY="-2862" width="128" height="103"/>
+        <element name="EventInfo" positionX="-3843" positionY="-2943" width="128" height="118"/>
         <element name="EventLocation" positionX="-3665" positionY="-2862" width="128" height="73"/>
     </elements>
 </model>

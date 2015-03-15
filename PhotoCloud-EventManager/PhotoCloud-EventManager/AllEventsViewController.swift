@@ -55,6 +55,15 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
         return cell
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let singleEventViewController = storyboard?.instantiateViewControllerWithIdentifier("CustomSingleEventViewController") as CustomSingleEventViewController
+        singleEventViewController.eventInfo = eventsArray[indexPath.row] as? EventInfo
+        self.navigationController?.pushViewController(singleEventViewController, animated: true)
+        
+    }
+    
+    
     func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
         var rect = CGRectMake(0, 0, size.width, size.height)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
