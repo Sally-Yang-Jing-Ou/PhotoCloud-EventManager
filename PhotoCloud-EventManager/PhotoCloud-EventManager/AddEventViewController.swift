@@ -56,6 +56,7 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         if(!dataContext.save(&error)){
             NSLog("error")
         }
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     // UIImagePickerControllerDelegate Methods
