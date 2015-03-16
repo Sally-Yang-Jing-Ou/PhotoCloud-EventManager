@@ -19,6 +19,7 @@
 		5A4BF5A61AB64008003E9E42 /* UzysGroupPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BF59B1AB64008003E9E42 /* UzysGroupPickerView.m */; };
 		5A4BF5A71AB64008003E9E42 /* UzysGroupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BF59D1AB64008003E9E42 /* UzysGroupViewCell.m */; };
 		5A4BF5A81AB64008003E9E42 /* UzysWrapperPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BF59F1AB64008003E9E42 /* UzysWrapperPickerController.m */; };
+		5A4BF5AD1AB65184003E9E42 /* UzysAssetsPickerController.h in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BF5941AB64008003E9E42 /* UzysAssetsPickerController.h */; };
 		5AB8FD0F1AB49F6100FB5B75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8FD0E1AB49F6100FB5B75 /* AppDelegate.swift */; };
 		5AB8FD111AB49F6100FB5B75 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8FD101AB49F6100FB5B75 /* SignInViewController.swift */; };
 		5AB8FD141AB49F6100FB5B75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8FD121AB49F6100FB5B75 /* Main.storyboard */; };
@@ -311,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4BF5AD1AB65184003E9E42 /* UzysAssetsPickerController.h in Sources */,
 				5A4BF5851AB4D5DF003E9E42 /* EventCell.swift in Sources */,
 				5A4BF5A71AB64008003E9E42 /* UzysGroupViewCell.m in Sources */,
 				C5E38C6A1AB625EA00EB8362 /* CustomSingleEventViewController.swift in Sources */,

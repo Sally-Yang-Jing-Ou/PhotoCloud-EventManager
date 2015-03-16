@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class AddEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class AddEventViewController: UIViewController, UINavigationControllerDelegate, UzysAssetsPickerControllerDelegate{
     @IBOutlet weak var uploadPhotosButton: UIButton?
     @IBOutlet weak var createEventButton: UIButton?
     
@@ -18,7 +18,6 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var eventDatePicker: UIDatePicker?
     
     var photoUrlArray: NSMutableArray = []
-    var photoCounter: NSInteger = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +28,7 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
         let picker = UzysAssetsPickerController()
         picker.maximumNumberOfSelectionPhoto = 9
         picker.maximumNumberOfSelectionVideo = 0
+        picker.delegate = self
         //let picker = UIImagePickerController()
 //        picker.sourceType = .PhotoLibrary
 //        picker.mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.PhotoLibrary)!
@@ -59,30 +59,36 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
     }
 
     // UIImagePickerControllerDelegate Methods
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
+    func uzysAssetsPickerController(picker: UzysAssetsPickerController!, didFinishPickingAssets assets: [AnyObject]!) {
+        var counter = 0
+        var assetsArray = (assets as NSArray)
+        for info in assetsArray {
+            var ciImage = info as ALAsset
+            var image = UIImage(CGImage:ciImage.defaultRepresentation().fullResolutionImage().takeRetainedValue())
+            //let image: UIImage = info[UIImagePickerControllerOriginalImage] as UIImage
+            // Get path to the Documents Dir.
+            let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+            let documentsDir: NSString = paths.objectAtIndex(0) as NSString
+            
+            // Get current date and time for unique name
+            var dateFormat = NSDateFormatter()
+            dateFormat.dateFormat = "yyyy-MM-dd-HH-mm-ss"
+            let now:NSDate = NSDate(timeIntervalSinceNow: 0)
+            let theDate: NSString = dateFormat.stringFromDate(now)
+            
+            // Set URL for the full screen image
+            var url = NSString(format: "/%@%d.png", theDate, counter)
+            photoUrlArray.addObject(url)
+            
+            // Save the full screen image via pngData
+            let pathFull: NSString = documentsDir.stringByAppendingString(url)
+            let pngFullData: NSData = UIImagePNGRepresentation(image)
+            pngFullData.writeToFile(pathFull, atomically: true)
+            
+            counter += 1
         
-        let image: UIImage = info[UIImagePickerControllerOriginalImage] as UIImage
-        // Get path to the Documents Dir.
-        let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentsDir: NSString = paths.objectAtIndex(0) as NSString
-        
-        // Get current date and time for unique name
-        var dateFormat = NSDateFormatter()
-        dateFormat.dateFormat = "yyyy-MM-dd-HH-mm-ss"
-        let now:NSDate = NSDate(timeIntervalSinceNow: 0)
-        let theDate: NSString = dateFormat.stringFromDate(now)
-        
-        // Set URL for the full screen image
-        var url = NSString(format: "/%@%d.png", theDate, photoCounter)
-        photoUrlArray.addObject(url)
-        
-        // Save the full screen image via pngData
-        let pathFull: NSString = documentsDir.stringByAppendingString(url)
-        let pngFullData: NSData = UIImagePNGRepresentation(image)
-        pngFullData.writeToFile(pathFull, atomically: true)
+        }
         picker.dismissViewControllerAnimated(true, completion: nil)
-        
-        photoCounter = photoCounter + 1;
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
