@@ -44,6 +44,12 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("reuseEventCell", forIndexPath: indexPath) as EventCell
         var currentEvent = eventsArray[indexPath.row]
         cell.eventNameLabel?.text = currentEvent.name
+        cell.layer.borderWidth=0.6
+        cell.layer.borderColor = UIColor.whiteColor().colorWithAlphaComponent(0.3).CGColor
+//        cell.layer.shadowOpacity = 0.4
+//        cell.layer.masksToBounds = false
+//        cell.layer.shadowColor = UIColor.whiteColor().CGColor
+        
         
         var photoData = currentEvent.photos as NSData?
         if((photoData) != nil){
@@ -51,7 +57,7 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
             let url = photoArray[0] as NSString
             cell.eventImageView?.image = DataManager.getImageFromUrl(url)
         }else{
-            cell.eventImageView?.image = UIImage.imageWithColor(UIColor.blueColor(), size: CGSizeMake(100, 60))
+            cell.eventImageView?.image = UIImage.imageWithColor(UIColor.blueColor(), size: CGSizeMake(100, 72))
         }
 
         return cell
@@ -62,5 +68,9 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
         let singleEventViewController = storyboard?.instantiateViewControllerWithIdentifier("CustomSingleEventViewController") as CustomSingleEventViewController
         singleEventViewController.eventInfo = eventsArray[indexPath.row]
         self.navigationController?.pushViewController(singleEventViewController, animated: true)
+    }
+    
+    func collectionView(collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return CGFloat(6)
     }
 }

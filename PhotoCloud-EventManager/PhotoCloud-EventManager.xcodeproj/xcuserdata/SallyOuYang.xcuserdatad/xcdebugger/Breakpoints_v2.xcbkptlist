@@ -31,8 +31,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
+            landmarkName = "AllEventsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "uploadPhotos(_:)"
+            landmarkName = "createEevent(_:)"
             landmarkType = "5">
             <Locations>
                <Location
@@ -93,7 +93,125 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
-            landmarkName = "uzysAssetsPickerController(_:didFinishPickingAssets:)"
+            landmarkName = "AddEventViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhotoCloud-EventManager/AllEventsViewController.swift"
+            timestampString = "448655815.729566"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "AllEventsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoCloud_EventManager.AllEventsViewController.addEventBarButtonItem.getter : weak Swift.Optional&lt;ObjectiveC.UIBarButtonItem&gt;"
+                  moduleName = "PhotoCloud-EventManager"
+                  urlString = "file:///Users/SallyOuYang/Documents/swift/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager/AllEventsViewController.swift"
+                  timestampString = "448655815.738285"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoCloud_EventManager.AllEventsViewController.addEventBarButtonItem.setter : weak Swift.Optional&lt;ObjectiveC.UIBarButtonItem&gt;"
+                  moduleName = "PhotoCloud-EventManager"
+                  urlString = "file:///Users/SallyOuYang/Documents/swift/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager/AllEventsViewController.swift"
+                  timestampString = "448655815.738449"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoCloud_EventManager.AllEventsViewController.addEventBarButtonItem.materializeForSet : weak Swift.Optional&lt;ObjectiveC.UIBarButtonItem&gt;"
+                  moduleName = "PhotoCloud-EventManager"
+                  urlString = "file:///Users/SallyOuYang/Documents/swift/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager/AllEventsViewController.swift"
+                  timestampString = "448655815.738576"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoCloud_EventManager.AllEventsViewController.init (PhotoCloud_EventManager.AllEventsViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; PhotoCloud_EventManager.AllEventsViewController"
+                  moduleName = "PhotoCloud-EventManager"
+                  urlString = "file:///Users/SallyOuYang/Documents/swift/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager/AllEventsViewController.swift"
+                  timestampString = "448655815.738787"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "157">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoCloud_EventManager.AllEventsViewController.init (PhotoCloud_EventManager.AllEventsViewController.Type)() -&gt; PhotoCloud_EventManager.AllEventsViewController"
+                  moduleName = "PhotoCloud-EventManager"
+                  urlString = "file:///Users/SallyOuYang/Documents/swift/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager/AllEventsViewController.swift"
+                  timestampString = "448655815.738971"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "125">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoCloud_EventManager.AllEventsViewController.init (PhotoCloud_EventManager.AllEventsViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; PhotoCloud_EventManager.AllEventsViewController"
+                  moduleName = "PhotoCloud-EventManager"
+                  urlString = "file:///Users/SallyOuYang/Documents/swift/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager/AllEventsViewController.swift"
+                  timestampString = "448655815.73908"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "133">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhotoCloud-EventManager/AllEventsViewController.swift"
+            timestampString = "448658152.066353"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -59,7 +59,7 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
     func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!,sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
         var resizeImage: UIImage?
         let url = photoArray[indexPath.section] as NSString
-        resizeImage = getImageFromUrl(url)
+        resizeImage = DataManager.getImageFromUrl(url)
 
         var randomWidth = CGFloat(arc4random_uniform(350) + 200)
         var imageWidth = resizeImage?.size.width

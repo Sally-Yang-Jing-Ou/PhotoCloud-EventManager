@@ -19,7 +19,7 @@
 #import "UzysGroupViewCell.h"
 #import "UzysWrapperPickerController.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import <QuartzCore/QuartzCore.h>
 
 
 #endif
