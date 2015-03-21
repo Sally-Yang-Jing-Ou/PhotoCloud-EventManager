@@ -53,8 +53,4 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         
         DataManager.saveImages(assetsArray)
     }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController){
-        picker.dismissViewControllerAnimated(true, completion: nil)
-    }
 }
