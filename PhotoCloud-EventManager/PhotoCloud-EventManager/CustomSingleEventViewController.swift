@@ -66,10 +66,26 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
     // MARK: UICollectionViewDelegateFlowLayout
     
     func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!,sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
-        var randomWidth = CGFloat(arc4random_uniform(250) + 150)
-        var randomHeight = CGFloat(arc4random_uniform(305) + 220)
+        var resizeImage: UIImage?
+        let url = photoArray[indexPath.section] as NSString
+        resizeImage = DataManager.getImageFromUrl(url)
+
+        var randomWidth = CGFloat(arc4random_uniform(350) + 200)
+        var imageWidth = resizeImage?.size.width
+        var imageHeight = resizeImage?.size.height
         
-        return CGSizeMake(randomWidth, randomHeight)
+        if (imageWidth > imageHeight) {
+            imageWidth = randomWidth
+            imageHeight = imageWidth! / 1.6
+        } else if (imageWidth < imageHeight) {
+            imageWidth = randomWidth
+            imageHeight = imageWidth! * 1.6
+        } else {
+            imageWidth = randomWidth
+            imageHeight = imageWidth
+        }
+        
+        return CGSizeMake(imageWidth!, imageHeight!)
     }
     
     func collectionView(collectionView: UICollectionView!,layout collectionViewLayout: UICollectionViewLayout!,insetForSectionAtIndex section: Int) -> UIEdgeInsets {

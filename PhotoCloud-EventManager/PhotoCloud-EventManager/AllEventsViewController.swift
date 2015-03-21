@@ -59,13 +59,23 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(collectionView.frame.size.width, 100)
+        return CGSizeMake(collectionView.frame.size.width, 83)
+    }
+    
+    func collectionView(collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return CGFloat(6)
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("reuseEventCell", forIndexPath: indexPath) as EventCell
         var currentEvent = eventsArray[indexPath.row]
         cell.eventNameLabel?.text = currentEvent.name
+        cell.layer.borderWidth=0.6
+        cell.layer.borderColor = UIColor.whiteColor().colorWithAlphaComponent(0.3).CGColor
+//        cell.layer.shadowOpacity = 0.4
+//        cell.layer.masksToBounds = false
+//        cell.layer.shadowColor = UIColor.whiteColor().CGColor
+        
         
         var photoData = currentEvent.photos as NSData?
         if((photoData) != nil){
@@ -73,7 +83,7 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
             let url = photoArray[0] as NSString
             cell.eventImageView?.image = DataManager.getImageFromUrl(url)
         }else{
-            cell.eventImageView?.image = UIImage.imageWithColor(UIColor.blueColor(), size: CGSizeMake(100, 60))
+            cell.eventImageView?.image = UIImage.imageWithColor(UIColor.blueColor(), size: CGSizeMake(100, 72))
         }
 
         return cell
