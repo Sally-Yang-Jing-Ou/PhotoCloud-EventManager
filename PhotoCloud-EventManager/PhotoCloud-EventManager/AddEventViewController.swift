@@ -65,7 +65,7 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         var assetsArray = (assets as NSArray)
         for info in assetsArray {
             var ciImage = info as ALAsset
-            var image = UIImage(CGImage:ciImage.defaultRepresentation().fullResolutionImage().takeRetainedValue())
+            var image = UIImage(CGImage:ciImage.defaultRepresentation().fullResolutionImage().takeUnretainedValue())
             //let image: UIImage = info[UIImagePickerControllerOriginalImage] as UIImage
             // Get path to the Documents Dir.
             let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
@@ -89,10 +89,6 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
             counter += 1
         
         }
-        picker.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController){
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
