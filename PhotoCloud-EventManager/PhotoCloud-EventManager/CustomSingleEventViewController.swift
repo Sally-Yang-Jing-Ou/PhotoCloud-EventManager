@@ -23,7 +23,7 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
         if((photoData) != nil){
             photoArray = NSKeyedUnarchiver.unarchiveObjectWithData(photoData!) as NSArray
             let url = photoArray[0] as NSString
-            backgroundImageView?.image = getImageFromUrl(url)
+            backgroundImageView?.image = DataManager.getImageFromUrl(url)
         }
         self.title = eventInfo?.name
     }
@@ -49,7 +49,7 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ReuseSingleEventPhotoCell", forIndexPath: indexPath) as SingleEventPhotoCell
         
         let url = photoArray[indexPath.section] as NSString
-        cell.singleEventImageView?.image = getImageFromUrl(url)
+        cell.singleEventImageView?.image = DataManager.getImageFromUrl(url)
         
         return cell
     }
@@ -71,22 +71,5 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
         var sectionInsets = UIEdgeInsetsMake(top, left, bottom, right)
         
         return sectionInsets
-    }
-    
-    
-    func getImageFromUrl(url: NSString) -> UIImage{
-        let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentsDir: NSString = paths.objectAtIndex(0) as NSString
-        let path: NSString = documentsDir.stringByAppendingString(url)
-        return UIImage(contentsOfFile: path)!
-    }
-    func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
-        var rect = CGRectMake(0, 0, size.width, size.height)
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        color.setFill()
-        UIRectFill(rect)
-        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
     }
 }

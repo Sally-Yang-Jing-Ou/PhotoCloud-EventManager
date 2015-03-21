@@ -14,7 +14,7 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     @IBOutlet weak var allEventsCollectionView: UICollectionView?
     @IBOutlet weak var addEventBarButtonItem: UIBarButtonItem?
     
-    var eventsArray: NSArray = []
+    var eventsArray: Array<EventInfo>! = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,9 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        var appDel = (UIApplication.sharedApplication().delegate as AppDelegate)
-        var dataContext = appDel.managedObjectContext
         
-        var request = NSFetchRequest(entityName: "EventInfo")
-        request.returnsObjectsAsFaults = false
+        eventsArray = DataManager.getAllEvents()
         
-        var requestError:NSError? = NSError()
-        eventsArray = dataContext?.executeFetchRequest(request, error: &requestError) as NSArray!
         allEventsCollectionView?.reloadData()
     }
     
@@ -47,10 +42,17 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("reuseEventCell", forIndexPath: indexPath) as EventCell
-        var currentEvent = eventsArray[indexPath.row] as EventInfo
+        var currentEvent = eventsArray[indexPath.row]
         cell.eventNameLabel?.text = currentEvent.name
- 
-        cell.eventImageView?.image = getImageWithColor(UIColor.blueColor(), size: CGSizeMake(100, 60))
+        
+        var photoData = currentEvent.photos as NSData?
+        if((photoData) != nil){
+            var photoArray = NSKeyedUnarchiver.unarchiveObjectWithData(photoData!) as Array<String>
+            let url = photoArray[0] as NSString
+            cell.eventImageView?.image = DataManager.getImageFromUrl(url)
+        }else{
+            cell.eventImageView?.image = UIImage.imageWithColor(UIColor.blueColor(), size: CGSizeMake(100, 60))
+        }
 
         return cell
     }
@@ -58,19 +60,7 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let singleEventViewController = storyboard?.instantiateViewControllerWithIdentifier("CustomSingleEventViewController") as CustomSingleEventViewController
-        singleEventViewController.eventInfo = eventsArray[indexPath.row] as? EventInfo
+        singleEventViewController.eventInfo = eventsArray[indexPath.row]
         self.navigationController?.pushViewController(singleEventViewController, animated: true)
-        
-    }
-    
-    
-    func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
-        var rect = CGRectMake(0, 0, size.width, size.height)
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        color.setFill()
-        UIRectFill(rect)
-        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
     }
 }
