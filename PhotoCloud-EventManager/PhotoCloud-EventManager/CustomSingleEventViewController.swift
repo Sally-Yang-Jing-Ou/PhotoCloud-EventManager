@@ -9,13 +9,18 @@
 import Foundation
 import UIKit
 
-class CustomSingleEventViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+protocol CustomSingleEventDelegate: class{
+    func customSingleEvent(customSingleEvent:CustomSingleEventViewController, didReturnPhoto photo:UIImage?)
+}
+
+class CustomSingleEventViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UINavigationControllerDelegate {
     
     @IBOutlet weak var backgroundImageView: UIImageView?
     @IBOutlet weak var customSingleEventCollectionView: UICollectionView?
     
     var eventInfo: EventInfo?
     var photoArray:NSArray = []
+    weak var delegate:CustomSingleEventDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +28,11 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
         if((photoData) != nil){
             photoArray = NSKeyedUnarchiver.unarchiveObjectWithData(photoData!) as NSArray
             let url = photoArray[0] as NSString
-            backgroundImageView?.image = DataManager.getImageFromUrl(url)
+            var backgroundImage = DataManager.getImageFromUrl(url)
+            backgroundImageView?.image = backgroundImage
+            if((delegate) != nil){
+                delegate?.customSingleEvent(self, didReturnPhoto: backgroundImage)
+            }
         }
         self.title = eventInfo?.name
     }
@@ -88,4 +97,7 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
         
         return sectionInsets
     }
+    
+    //MARK: UINavigationController Delegate
+    
 }
