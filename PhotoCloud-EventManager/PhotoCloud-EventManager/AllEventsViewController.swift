@@ -10,20 +10,42 @@ import Foundation
 import UIKit
 import CoreData
 
-class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CustomSingleEventDelegate {
     @IBOutlet weak var allEventsCollectionView: UICollectionView?
     @IBOutlet weak var addEventBarButtonItem: UIBarButtonItem?
+    @IBOutlet weak var backgroundImageView: UIImageView?
     
     var eventsArray: Array<EventInfo>! = []
+    var backgroundImage: UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backgroundImageView?.image = UIImage.imageWithColor(UIColor.grayColor(), size: backgroundImageView?.frame.size)
+        eventsArray = DataManager.getAllEvents()
+        if(eventsArray.count > 0){
+            var firstEvent = eventsArray[0];
+            var photoData = firstEvent.photos as NSData?
+            if((photoData) != nil){
+                var photoArray = NSKeyedUnarchiver.unarchiveObjectWithData(photoData!) as Array<String>
+                let url = photoArray[0] as NSString
+                backgroundImageView?.image = DataManager.getImageFromUrl(url)
+            }
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if((backgroundImage) != nil){
+            backgroundImageView?.image = backgroundImage
+        }
+        eventsArray = DataManager.getAllEvents()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        eventsArray = DataManager.getAllEvents()
         
         allEventsCollectionView?.reloadData()
     }
@@ -61,6 +83,12 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let singleEventViewController = storyboard?.instantiateViewControllerWithIdentifier("CustomSingleEventViewController") as CustomSingleEventViewController
         singleEventViewController.eventInfo = eventsArray[indexPath.row]
+        singleEventViewController.delegate = self;
         self.navigationController?.pushViewController(singleEventViewController, animated: true)
+    }
+    
+    //MARK: CustomSingleEvent Delegate
+    func customSingleEvent(customSingleEvent: CustomSingleEventViewController, didReturnPhoto photo: UIImage?) {
+        backgroundImage = photo
     }
 }

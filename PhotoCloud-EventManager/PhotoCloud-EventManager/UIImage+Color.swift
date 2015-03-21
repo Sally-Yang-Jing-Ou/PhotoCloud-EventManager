@@ -9,7 +9,7 @@
 import Foundation
 
 extension UIImage{
-    class func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
+    class func imageWithColor(color: UIColor, size: CGSize!) -> UIImage? {
         var rect = CGRectMake(0, 0, size.width, size.height)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         color.setFill()
