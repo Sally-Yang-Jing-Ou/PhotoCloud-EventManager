@@ -27,6 +27,7 @@
 		5AB8FD191AB49F6100FB5B75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8FD171AB49F6100FB5B75 /* LaunchScreen.xib */; };
 		5AB8FD251AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */; };
 		C568811F1AB4EF6C001073F6 /* EventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C568811D1AB4EF6C001073F6 /* EventsModel.xcdatamodeld */; };
+		C5CC1CB51ABE2AE100046763 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CC1CB41ABE2AE100046763 /* CoreImage.framework */; };
 		C5D4F16E1ABDDA8B00193538 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4F16D1ABDDA8B00193538 /* DataManager.swift */; };
 		C5D4F1701ABDDD4400193538 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4F16F1ABDDD4400193538 /* UIImage+Color.swift */; };
 		C5E38C641AB60A4400EB8362 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E38C631AB60A4400EB8362 /* CoreData.framework */; };
@@ -79,6 +80,7 @@
 		5AB8FD231AB49F6100FB5B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCloud_EventManagerTests.swift; sourceTree = "<group>"; };
 		C568811E1AB4EF6C001073F6 /* EventsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsModel.xcdatamodel; sourceTree = "<group>"; };
+		C5CC1CB41ABE2AE100046763 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		C5D4F16D1ABDDA8B00193538 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C5D4F16F1ABDDD4400193538 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		C5E38C631AB60A4400EB8362 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -93,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CC1CB51ABE2AE100046763 /* CoreImage.framework in Frameworks */,
 				C5E38C641AB60A4400EB8362 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +157,7 @@
 		5AB8FD001AB49F6000FB5B75 = {
 			isa = PBXGroup;
 			children = (
+				C5CC1CB41ABE2AE100046763 /* CoreImage.framework */,
 				C5E38C631AB60A4400EB8362 /* CoreData.framework */,
 				5AB8FD0B1AB49F6100FB5B75 /* PhotoCloud-EventManager */,
 				5AB8FD211AB49F6100FB5B75 /* PhotoCloud-EventManagerTests */,

@@ -8,12 +8,13 @@
 
 import Foundation
 import UIKit
+import Social
 
 protocol CustomSingleEventDelegate: class{
     func customSingleEvent(customSingleEvent:CustomSingleEventViewController, didReturnPhoto photo:UIImage?)
 }
 
-class CustomSingleEventViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UINavigationControllerDelegate {
+class CustomSingleEventViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     @IBOutlet weak var backgroundImageView: UIImageView?
     @IBOutlet weak var customSingleEventCollectionView: UICollectionView?
@@ -98,6 +99,62 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
         return sectionInsets
     }
     
-    //MARK: UINavigationController Delegate
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        var cell = collectionView.cellForItemAtIndexPath(indexPath) as SingleEventPhotoCell
+        var facebookShareViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+        var image = convertImageToBlurViewImage(cell.singleEventImageView?.image!)
+        facebookShareViewController.addImage(image)
+
+        
+        facebookShareViewController.modalPresentationStyle = UIModalPresentationStyle.PageSheet
+        self.navigationController?.presentViewController(facebookShareViewController, animated: true, completion: nil)
+    }
     
+    func convertImageToBlurViewImage(image:UIImage!) -> UIImage{
+        var containerView = UIView(frame: self.view.frame)
+        
+        var backgroundImageView = UIImageView(image: image)
+        backgroundImageView.frame = containerView.bounds
+        backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        
+        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        var backgroundVisualEffectView = UIVisualEffectView(effect: blurEffect)
+        backgroundVisualEffectView.frame = containerView.bounds
+        
+        var imageSize : CGSize
+        if(image.size.width <= image.size.height){
+            //Vertical or Square
+            var height = containerView.frame.size.height / 1.5
+            imageSize = CGSizeMake(height / image.size.height * image.size.width, height)
+        }else{
+            //Horizontal
+            var width = containerView.frame.size.width
+            imageSize = CGSizeMake(width, width / image.size.width * image.size.height)
+        }
+        
+        var mainImageView = UIImageView(image: image)
+        mainImageView.frame = CGRectMake(0, 0, imageSize.width, imageSize.height)
+        mainImageView.center = backgroundImageView.center
+        mainImageView.layer.borderColor = UIColor.whiteColor().colorWithAlphaComponent(0.8).CGColor
+        mainImageView.layer.borderWidth = 4
+        mainImageView.layer.masksToBounds = false
+        mainImageView.layer.shadowColor = UIColor.blackColor().CGColor
+        mainImageView.layer.shadowOpacity = 0.5
+        
+        containerView.addSubview(backgroundImageView)
+        containerView.addSubview(backgroundVisualEffectView)
+        containerView.addSubview(mainImageView)
+        
+        var rect = containerView.frame;
+
+        
+        UIGraphicsBeginImageContextWithOptions(rect.size,true,0);
+        containerView.drawViewHierarchyInRect(rect, afterScreenUpdates: true)
+        var capturedScreen = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        //self.view = containerView
+        
+        return capturedScreen
+    }
 }
