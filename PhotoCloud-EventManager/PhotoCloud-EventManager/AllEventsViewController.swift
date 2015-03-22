@@ -68,7 +68,13 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("reuseEventCell", forIndexPath: indexPath) as EventCell
         var currentEvent = eventsArray[indexPath.row]
+        
+        var dateFormat = NSDateFormatter()
+        dateFormat.dateFormat = "MMMM dd, yyyy"
+        let theDate: String = dateFormat.stringFromDate(currentEvent.eventDate)
+        
         cell.eventNameLabel?.text = currentEvent.name
+        cell.eventDateLabel?.text = theDate
         cell.eventObject = currentEvent as NSManagedObject
         cell.delegate = self
         cell.layer.borderWidth=0.6

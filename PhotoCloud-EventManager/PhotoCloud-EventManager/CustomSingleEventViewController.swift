@@ -60,6 +60,12 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
         
         let url = photoArray[indexPath.section] as NSString
         cell.singleEventImageView?.image = DataManager.getImageFromUrl(url)
+//        cell.layer.borderColor = UIColor.whiteColor().colorWithAlphaComponent(0.8).CGColor
+//        cell.layer.borderWidth = 4
+//        cell.layer.masksToBounds = false
+//        cell.layer.shadowColor = UIColor.blackColor().CGColor
+//        cell.layer.shadowOpacity = 0.5
+        
         
         return cell
     }

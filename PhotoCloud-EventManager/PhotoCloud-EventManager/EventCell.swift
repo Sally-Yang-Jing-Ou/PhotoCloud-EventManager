@@ -17,6 +17,7 @@ protocol EventCellDelegate : class {
 class EventCell: UICollectionViewCell {
     @IBOutlet weak var eventImageView: UIImageView?
     @IBOutlet weak var eventNameLabel: UILabel?
+    @IBOutlet weak var eventDateLabel: UILabel?
     
     var eventObject : NSManagedObject? = nil
     weak var delegate : EventCellDelegate? = nil
