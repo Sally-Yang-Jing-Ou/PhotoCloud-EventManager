@@ -475,7 +475,7 @@
 				INFOPLIST_FILE = "PhotoCloud-EventManager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/neginhodaie/Desktop/David's Projects/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/SallyOuYang/Documents/swift/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -486,7 +486,7 @@
 				INFOPLIST_FILE = "PhotoCloud-EventManager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/neginhodaie/Desktop/David's Projects/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/SallyOuYang/Documents/swift/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager/PhotoCloud-EventManager-Bridging-Header.h";
 			};
 			name = Release;
 		};
