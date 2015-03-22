@@ -14,7 +14,7 @@ protocol CustomSingleEventDelegate: class{
     func customSingleEvent(customSingleEvent:CustomSingleEventViewController, didReturnPhoto photo:UIImage?)
 }
 
-class CustomSingleEventViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class CustomSingleEventViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIActionSheetDelegate {
     
     @IBOutlet weak var backgroundImageView: UIImageView?
     @IBOutlet weak var customSingleEventCollectionView: UICollectionView?
@@ -40,7 +40,7 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        customSingleEventCollectionView?.reloadData()
+        //customSingleEventCollectionView?.reloadData()
     }
     
     // MARK: UICollectionViewDataSource
@@ -101,13 +101,30 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as SingleEventPhotoCell
-        var facebookShareViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
         var image = convertImageToBlurViewImage(cell.singleEventImageView?.image!)
-        facebookShareViewController.addImage(image)
 
+        var alertViewController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        alertViewController.addAction(cancelAction)
         
-        facebookShareViewController.modalPresentationStyle = UIModalPresentationStyle.PageSheet
-        self.navigationController?.presentViewController(facebookShareViewController, animated: true, completion: nil)
+        let facebookShareAction = UIAlertAction(title: "Share to Facebook", style: UIAlertActionStyle.Default) { (action) -> Void in
+            var facebookShareViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            facebookShareViewController.addImage(image)
+            
+            self.presentViewController(facebookShareViewController, animated: true, completion: nil)
+        }
+        alertViewController.addAction(facebookShareAction)
+        
+        let twitterShareAction = UIAlertAction(title: "Share to Twitter", style: UIAlertActionStyle.Default) { (action) -> Void in
+            var twitterShareViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            twitterShareViewController.addImage(image)
+            
+            self.presentViewController(twitterShareViewController, animated: true, completion: nil)
+        }
+        
+        alertViewController.addAction(twitterShareAction)
+
+        self.presentViewController(alertViewController, animated: true, completion: nil)
     }
     
     func convertImageToBlurViewImage(image:UIImage!) -> UIImage{
@@ -146,7 +163,6 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
         containerView.addSubview(mainImageView)
         
         var rect = containerView.frame;
-
         
         UIGraphicsBeginImageContextWithOptions(rect.size,true,0);
         containerView.drawViewHierarchyInRect(rect, afterScreenUpdates: true)

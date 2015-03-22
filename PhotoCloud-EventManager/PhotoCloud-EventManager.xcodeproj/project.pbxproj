@@ -27,7 +27,6 @@
 		5AB8FD191AB49F6100FB5B75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8FD171AB49F6100FB5B75 /* LaunchScreen.xib */; };
 		5AB8FD251AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */; };
 		C568811F1AB4EF6C001073F6 /* EventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C568811D1AB4EF6C001073F6 /* EventsModel.xcdatamodeld */; };
-		C5CC1CB51ABE2AE100046763 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CC1CB41ABE2AE100046763 /* CoreImage.framework */; };
 		C5D4F16E1ABDDA8B00193538 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4F16D1ABDDA8B00193538 /* DataManager.swift */; };
 		C5D4F1701ABDDD4400193538 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4F16F1ABDDD4400193538 /* UIImage+Color.swift */; };
 		C5E38C641AB60A4400EB8362 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E38C631AB60A4400EB8362 /* CoreData.framework */; };
@@ -95,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5CC1CB51ABE2AE100046763 /* CoreImage.framework in Frameworks */,
 				C5E38C641AB60A4400EB8362 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

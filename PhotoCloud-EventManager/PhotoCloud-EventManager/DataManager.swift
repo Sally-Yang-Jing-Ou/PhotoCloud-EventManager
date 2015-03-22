@@ -36,9 +36,20 @@ class DataManager: NSObject{
         eventData.setValue(event["eventDate"]?, forKey: "eventDate")
         eventData.setValue(NSDate(), forKey: "createDate")
         if((event["photos"]) != nil){
-            var photoData = NSKeyedArchiver.archivedDataWithRootObject(event["photos"] as Array<String>)
-            eventData.setValue(photoData, forKey: "photos")
+            //var photoData = NSKeyedArchiver.archivedDataWithRootObject(event["photos"])
+            eventData.setValue(event["photos"]!, forKey: "photos")
         }
+        var error = NSError?()
+        if(!dataContext.save(&error)){
+            NSLog("error")
+        }
+    }
+    
+    class func deleteEvent(event: NSManagedObject?){
+        var appDel = (UIApplication.sharedApplication().delegate as AppDelegate)
+        var dataContext: NSManagedObjectContext = appDel.managedObjectContext!
+        dataContext.deleteObject(event!)
+        
         var error = NSError?()
         if(!dataContext.save(&error)){
             NSLog("error")

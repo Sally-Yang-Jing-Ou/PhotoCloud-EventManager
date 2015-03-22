@@ -17,7 +17,7 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var eventNameTextField: UITextField?
     @IBOutlet weak var eventDatePicker: UIDatePicker?
     
-    var photoUrlArray: Array<String> = []
+    var photoUrlArray: Array<String>? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +36,8 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         var date = eventDatePicker?.date
         
         var photoData : NSData?
-        if(photoUrlArray.count > 0){
-            photoData = NSKeyedArchiver.archivedDataWithRootObject(photoUrlArray) as NSData
+        if(photoUrlArray?.count > 0){
+            photoData = NSKeyedArchiver.archivedDataWithRootObject(photoUrlArray!) as NSData
         }
         
         var eventDictionary : [String : AnyObject?] = ["name" : name, "eventDate" : date, "photos" : photoData?]
@@ -51,6 +51,6 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
     func uzysAssetsPickerController(picker: UzysAssetsPickerController!, didFinishPickingAssets assets: [AnyObject]!) {
         var assetsArray = (assets as Array<ALAsset>)
         
-        DataManager.saveImages(assetsArray)
+        photoUrlArray = DataManager.saveImages(assetsArray)
     }
 }

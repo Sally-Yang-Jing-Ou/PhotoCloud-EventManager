@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CustomSingleEventDelegate {
+class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CustomSingleEventDelegate, EventCellDelegate {
     @IBOutlet weak var allEventsCollectionView: UICollectionView?
     @IBOutlet weak var addEventBarButtonItem: UIBarButtonItem?
     @IBOutlet weak var backgroundImageView: UIImageView?
@@ -46,7 +46,6 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        
         allEventsCollectionView?.reloadData()
     }
     
@@ -70,6 +69,8 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("reuseEventCell", forIndexPath: indexPath) as EventCell
         var currentEvent = eventsArray[indexPath.row]
         cell.eventNameLabel?.text = currentEvent.name
+        cell.eventObject = currentEvent as NSManagedObject
+        cell.delegate = self
         cell.layer.borderWidth=0.6
         cell.layer.borderColor = UIColor.whiteColor().colorWithAlphaComponent(0.3).CGColor
 //        cell.layer.shadowOpacity = 0.4
@@ -100,5 +101,23 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     //MARK: CustomSingleEvent Delegate
     func customSingleEvent(customSingleEvent: CustomSingleEventViewController, didReturnPhoto photo: UIImage?) {
         backgroundImage = photo
+    }
+    
+    //MARK: EventCell Delegate
+    func eventCell(eventCell: EventCell, willDeleteEvent event: NSManagedObject) {
+        var deleteAlertController = UIAlertController(title: nil, message: "Are you sure you want to delete this event?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        var yesAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Destructive) { (action) -> Void in
+            DataManager.deleteEvent(event)
+            self.eventsArray = DataManager.getAllEvents()
+            self.allEventsCollectionView?.reloadData()
+        }
+        
+        var noAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        deleteAlertController.addAction(yesAction)
+        deleteAlertController.addAction(noAction)
+        
+        self.presentViewController(deleteAlertController, animated: true, completion: nil)
     }
 }
