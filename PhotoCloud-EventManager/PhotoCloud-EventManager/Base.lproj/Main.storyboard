@@ -157,12 +157,22 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHP-Fj-a0C" userLabel="EventName">
-                                                                <rect key="frame" x="129" y="30" width="150" height="21"/>
+                                                                <rect key="frame" x="134" y="15" width="150" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="FXj-HE-dA8"/>
                                                                     <constraint firstAttribute="width" constant="150" id="sOZ-uQ-P4p"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bS-No-BSG">
+                                                                <rect key="frame" x="134" y="49" width="150" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="150" id="6VF-b5-nI5"/>
+                                                                    <constraint firstAttribute="height" constant="21" id="zdF-kd-JTL"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -172,14 +182,17 @@
                                                     <color key="backgroundColor" red="0.5956482670407186" green="0.82504686877774125" blue="0.93684895833333337" alpha="0.28999999999999998" colorSpace="calibratedRGB"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="BHP-Fj-a0C" firstAttribute="top" secondItem="4Ko-mG-frD" secondAttribute="top" constant="30" id="SUW-3W-K6c"/>
+                                                        <constraint firstItem="BHP-Fj-a0C" firstAttribute="top" secondItem="4Ko-mG-frD" secondAttribute="top" constant="15" id="SUW-3W-K6c"/>
                                                         <constraint firstAttribute="bottom" secondItem="M7s-rM-Ev6" secondAttribute="bottom" constant="6" id="TaS-TY-HHh"/>
+                                                        <constraint firstItem="4bS-No-BSG" firstAttribute="leading" secondItem="M7s-rM-Ev6" secondAttribute="trailing" constant="25" id="YGb-ih-xd0"/>
                                                         <constraint firstItem="M7s-rM-Ev6" firstAttribute="top" secondItem="4Ko-mG-frD" secondAttribute="top" constant="5" id="ZuS-pR-30S"/>
+                                                        <constraint firstItem="4bS-No-BSG" firstAttribute="top" secondItem="BHP-Fj-a0C" secondAttribute="bottom" constant="13" id="f12-qi-CDt"/>
                                                         <constraint firstItem="M7s-rM-Ev6" firstAttribute="leading" secondItem="4Ko-mG-frD" secondAttribute="leading" constant="9" id="ijS-bV-QZm"/>
-                                                        <constraint firstItem="BHP-Fj-a0C" firstAttribute="leading" secondItem="M7s-rM-Ev6" secondAttribute="trailing" constant="20" id="x4M-57-vAh"/>
+                                                        <constraint firstItem="BHP-Fj-a0C" firstAttribute="leading" secondItem="M7s-rM-Ev6" secondAttribute="trailing" constant="25" id="x4M-57-vAh"/>
                                                     </constraints>
                                                     <size key="customSize" width="292" height="83"/>
                                                     <connections>
+                                                        <outlet property="eventDateLabel" destination="4bS-No-BSG" id="Qn2-SR-xuT"/>
                                                         <outlet property="eventImageView" destination="M7s-rM-Ev6" id="zJB-Wm-cZ4"/>
                                                         <outlet property="eventNameLabel" destination="BHP-Fj-a0C" id="eb5-pN-Ko2"/>
                                                     </connections>
