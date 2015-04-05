@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -122,16 +123,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBV-i4-jkq">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1VV-ej-XiP">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            </view>
-                                            <vibrancyEffect>
-                                                <blurEffect style="light"/>
-                                            </vibrancyEffect>
-                                        </visualEffectView>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vhs-4H-bKz">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -203,9 +194,45 @@
                                                 <outlet property="delegate" destination="1Oq-PJ-XAK" id="ROL-WP-mRI"/>
                                             </connections>
                                         </collectionView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyc-79-tIA">
+                                            <rect key="frame" x="60" y="160" width="200" height="200"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DB9-QE-ppK">
+                                                    <rect key="frame" x="20" y="0.0" width="160" height="160"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="DB9-QE-ppK" secondAttribute="height" multiplier="1:1" id="xXf-Xh-WKU"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="addEventButton">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="eAM-ok-bQl" kind="push" id="vEu-B2-BJS"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeY-zN-Vt8">
+                                                    <rect key="frame" x="25" y="170" width="150" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="DB9-QE-ppK" firstAttribute="leading" secondItem="Fyc-79-tIA" secondAttribute="leading" constant="20" id="268-vJ-g85"/>
+                                                <constraint firstItem="GeY-zN-Vt8" firstAttribute="leading" secondItem="Fyc-79-tIA" secondAttribute="leading" constant="25" id="DCa-Ql-CNY"/>
+                                                <constraint firstAttribute="height" constant="200" id="EaL-iV-APs"/>
+                                                <constraint firstAttribute="trailing" secondItem="DB9-QE-ppK" secondAttribute="trailing" constant="20" id="NKI-U9-fS6"/>
+                                                <constraint firstAttribute="trailing" secondItem="GeY-zN-Vt8" secondAttribute="trailing" constant="25" id="Xev-T5-xPj"/>
+                                                <constraint firstItem="DB9-QE-ppK" firstAttribute="top" secondItem="Fyc-79-tIA" secondAttribute="top" id="g1c-rx-Z7K"/>
+                                                <constraint firstItem="GeY-zN-Vt8" firstAttribute="top" secondItem="DB9-QE-ppK" secondAttribute="bottom" constant="10" id="vXU-hg-sbH"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="vhs-4H-bKz" secondAttribute="trailing" id="QXp-wg-Mzw"/>
+                                        <constraint firstItem="Fyc-79-tIA" firstAttribute="leading" secondItem="WVY-qJ-w5b" secondAttribute="leading" constant="60" id="SlV-Yq-p48"/>
+                                        <constraint firstItem="Fyc-79-tIA" firstAttribute="top" secondItem="WVY-qJ-w5b" secondAttribute="top" constant="160" id="V3R-VL-klg"/>
+                                        <constraint firstAttribute="trailing" secondItem="Fyc-79-tIA" secondAttribute="trailing" constant="60" id="ehf-Q9-wRf"/>
                                         <constraint firstAttribute="bottom" secondItem="vhs-4H-bKz" secondAttribute="bottom" id="iHX-VD-zGv"/>
                                         <constraint firstItem="vhs-4H-bKz" firstAttribute="leading" secondItem="WVY-qJ-w5b" secondAttribute="leading" id="iPi-Wj-8KI"/>
                                         <constraint firstItem="vhs-4H-bKz" firstAttribute="top" secondItem="WVY-qJ-w5b" secondAttribute="top" id="tIT-Ke-by1"/>
@@ -236,6 +263,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addEventBarButtonItem" destination="LBN-GZ-H5s" id="W2p-Np-Ivk"/>
+                        <outlet property="addEventButtonView" destination="Fyc-79-tIA" id="LvF-aP-mWv"/>
                         <outlet property="allEventsCollectionView" destination="vhs-4H-bKz" id="SFN-86-P0v"/>
                         <outlet property="backgroundImageView" destination="raJ-qB-7gP" id="V47-Me-JZh"/>
                     </connections>
@@ -463,9 +491,15 @@
             <point key="canvasLocation" x="937" y="671"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addEventButton" width="512" height="512"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="vEu-B2-BJS"/>
+    </inferredMetricsTieBreakers>
 </document>

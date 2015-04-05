@@ -11,6 +11,11 @@ import CoreData
 
 class DataManager: NSObject{
     
+    class func getNumberOfEvents() -> Int {
+        var allEvents = getAllEvents()
+        return allEvents.count
+    }
+    
     class func getAllEvents() -> Array<EventInfo>!{
         var appDel = (UIApplication.sharedApplication().delegate as AppDelegate)
         var dataContext = appDel.managedObjectContext

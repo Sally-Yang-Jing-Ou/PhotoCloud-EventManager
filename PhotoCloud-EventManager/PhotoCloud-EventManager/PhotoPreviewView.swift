@@ -79,6 +79,4 @@ class PhotoPreviewView: UIView {
         displayView.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2)
     }
     
-    
-    
 }

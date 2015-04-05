@@ -14,6 +14,7 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
     @IBOutlet weak var allEventsCollectionView: UICollectionView?
     @IBOutlet weak var addEventBarButtonItem: UIBarButtonItem?
     @IBOutlet weak var backgroundImageView: UIImageView?
+    @IBOutlet weak var addEventButtonView: UIView?
     
     var eventsArray: Array<EventInfo>! = []
     var backgroundImage: UIImage? = nil
@@ -39,8 +40,16 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         if((backgroundImage) != nil){
             backgroundImageView?.image = backgroundImage
+        }else{
+            backgroundImageView?.image = UIImage(named: "Cloud.jpg")
         }
         eventsArray = DataManager.getAllEvents()
+        
+        if(eventsArray.count == 0){
+            addEventButtonView?.hidden = false
+        }else{
+            addEventButtonView?.hidden = true
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -117,6 +126,13 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
             DataManager.deleteEvent(event)
             self.eventsArray = DataManager.getAllEvents()
             self.allEventsCollectionView?.reloadData()
+            
+            
+            if(self.eventsArray.count == 0){
+                self.addEventButtonView?.hidden = false
+            }else{
+                self.addEventButtonView?.hidden = true
+            }
         }
         
         var noAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: nil)

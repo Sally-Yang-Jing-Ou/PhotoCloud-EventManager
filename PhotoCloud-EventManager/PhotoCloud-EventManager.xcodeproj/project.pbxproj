@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A1648A41AD1C22100539881 /* Cloud.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A1648A31AD1C22100539881 /* Cloud.jpg */; };
 		5A4BF5831AB4B333003E9E42 /* AllEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BF5821AB4B333003E9E42 /* AllEventsViewController.swift */; };
 		5A4BF5851AB4D5DF003E9E42 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BF5841AB4D5DF003E9E42 /* EventCell.swift */; };
 		5A4BF5871AB4EBA5003E9E42 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BF5861AB4EBA5003E9E42 /* AddEventViewController.swift */; };
@@ -29,6 +28,7 @@
 		5AB8FD251AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */; };
 		C51DE2581AD1AD6F00FA6975 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DE2571AD1AD6F00FA6975 /* PhotoPreviewView.swift */; };
 		C51DE25A1AD1BC6100FA6975 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DE2591AD1BC6100FA6975 /* UIImage+Resize.swift */; };
+		C51DE25C1AD1E17A00FA6975 /* Cloud.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C51DE25B1AD1E17A00FA6975 /* Cloud.jpg */; };
 		C568811F1AB4EF6C001073F6 /* EventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C568811D1AB4EF6C001073F6 /* EventsModel.xcdatamodeld */; };
 		C5D4F16E1ABDDA8B00193538 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4F16D1ABDDA8B00193538 /* DataManager.swift */; };
 		C5D4F1701ABDDD4400193538 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4F16F1ABDDD4400193538 /* UIImage+Color.swift */; };
@@ -50,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A1648A31AD1C22100539881 /* Cloud.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Cloud.jpg; path = ../../../../../../../Desktop/Cloud.jpg; sourceTree = "<group>"; };
 		5A4BF5821AB4B333003E9E42 /* AllEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllEventsViewController.swift; sourceTree = "<group>"; };
 		5A4BF5841AB4D5DF003E9E42 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		5A4BF5861AB4EBA5003E9E42 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCloud_EventManagerTests.swift; sourceTree = "<group>"; };
 		C51DE2571AD1AD6F00FA6975 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
 		C51DE2591AD1BC6100FA6975 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		C51DE25B1AD1E17A00FA6975 /* Cloud.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cloud.jpg; sourceTree = "<group>"; };
 		C568811E1AB4EF6C001073F6 /* EventsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsModel.xcdatamodel; sourceTree = "<group>"; };
 		C5CC1CB41ABE2AE100046763 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		C5D4F16D1ABDDA8B00193538 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -188,8 +188,8 @@
 				5A4BF5881AB4F0FF003E9E42 /* ViewControllers */,
 				C5D4F16C1ABDD9D200193538 /* Models */,
 				5AB8FD121AB49F6100FB5B75 /* Main.storyboard */,
-				5A1648A31AD1C22100539881 /* Cloud.jpg */,
 				5AB8FD171AB49F6100FB5B75 /* LaunchScreen.xib */,
+				C51DE25B1AD1E17A00FA6975 /* Cloud.jpg */,
 				5AB8FD151AB49F6100FB5B75 /* Images.xcassets */,
 				5AB8FD0C1AB49F6100FB5B75 /* Supporting Files */,
 				C568811D1AB4EF6C001073F6 /* EventsModel.xcdatamodeld */,
@@ -316,7 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB8FD141AB49F6100FB5B75 /* Main.storyboard in Resources */,
-				5A1648A41AD1C22100539881 /* Cloud.jpg in Resources */,
+				C51DE25C1AD1E17A00FA6975 /* Cloud.jpg in Resources */,
 				5AB8FD191AB49F6100FB5B75 /* LaunchScreen.xib in Resources */,
 				5A4BF5A41AB64008003E9E42 /* UzysAssetsPickerController.xib in Resources */,
 				5A4BF5A21AB64008003E9E42 /* UzysAssetPickerController.bundle in Resources */,

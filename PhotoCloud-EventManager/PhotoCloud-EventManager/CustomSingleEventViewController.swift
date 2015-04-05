@@ -76,29 +76,17 @@ class CustomSingleEventViewController: UIViewController, UICollectionViewDelegat
         var resizeImage: UIImage?
         let url = photoArray[indexPath.section] as NSString
         resizeImage = DataManager.getImageFromUrl(url)
-
-        var randomWidth = CGFloat(arc4random_uniform(350) + 200)
-        var imageWidth = resizeImage?.size.width
-        var imageHeight = resizeImage?.size.height
         
-        if (imageWidth > imageHeight) {
-            imageWidth = randomWidth
-            imageHeight = imageWidth! / 1.6
-        } else if (imageWidth < imageHeight) {
-            imageWidth = randomWidth
-            imageHeight = imageWidth! * 1.6
-        } else {
-            imageWidth = randomWidth
-            imageHeight = imageWidth
-        }
+        var randHeight = max(collectionView.frame.size.height / 2,CGFloat(arc4random_uniform(200) + 300))
+        var newSize = CGSizeMake(randHeight / (resizeImage?.size.height)! * (resizeImage?.size.width)!, randHeight)
         
-        return CGSizeMake(imageWidth!, imageHeight!)
+        return newSize
     }
     
     func collectionView(collectionView: UICollectionView!,layout collectionViewLayout: UICollectionViewLayout!,insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        var top = CGFloat(arc4random_uniform(50) + 45)
+        var top = CGFloat(0)//CGFloat(arc4random_uniform(50) + 45)
         var left = CGFloat(arc4random_uniform(20) + 10)
-        var bottom = CGFloat(arc4random_uniform(50) + 45)
+        var bottom = CGFloat(0)//CGFloat(arc4random_uniform(50) + 45)
         var right = CGFloat(arc4random_uniform(20) + 10)
         var sectionInsets = UIEdgeInsetsMake(top, left, bottom, right)
         
