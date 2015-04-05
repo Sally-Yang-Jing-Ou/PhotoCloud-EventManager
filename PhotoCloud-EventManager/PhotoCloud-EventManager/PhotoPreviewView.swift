@@ -46,7 +46,6 @@ class PhotoPreviewView: UIView {
     //MARK: Helper functions
     private func setupViews() {
         self.addSubview(displayView)
-        self.clipsToBounds = true
     }
     
     private func deleteImages(){
@@ -59,12 +58,16 @@ class PhotoPreviewView: UIView {
     private func refreshImages(){
         var numberOfViews: NSInteger = imageArray.count
         var spacesBetweenImages = min(Float(self.frame.size.width) / Float(numberOfViews), preferredImageOffset)
+        var rotationAngle = (-45) / 180.0 * M_PI
+        var rotationAngleOffset = (Double(90.0)/Double(numberOfViews+1)) / 180.0 * M_PI
         var xPosition: Float = 0
         var maxX: Float = 0
         for image in imageArray {
+            rotationAngle = rotationAngle + rotationAngleOffset
             var newImage = UIImage.imageByResizingImage(image, toNewHeight: self.frame.size.height, keepAspect: true)
             var imageView = UIImageView(image: newImage)
             imageView.frame = CGRectMake(CGFloat(xPosition), 0, imageView.frame.size.width, imageView.frame.size.height)
+            imageView.transform = CGAffineTransformMakeRotation(CGFloat(rotationAngle))
             imageView.layer.shadowColor = UIColor.blackColor().CGColor
             imageView.layer.shadowOpacity = 1
             imageView.layer.masksToBounds = false

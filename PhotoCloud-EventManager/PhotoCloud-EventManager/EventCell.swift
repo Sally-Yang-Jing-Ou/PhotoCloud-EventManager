@@ -25,25 +25,12 @@ class EventCell: UICollectionViewCell {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        var longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressAction:")
-        self.addGestureRecognizer(longPressGestureRecognizer)
     }
     
     @IBAction func deleteEvent(sender: UIButton!) {
         if((eventObject) != nil){
             if((delegate) != nil){
                 delegate?.eventCell(self, willDeleteEvent: eventObject!)
-            }
-        }
-    }
-    
-    func longPressAction(recognizer : UILongPressGestureRecognizer){
-        if(recognizer.state == UIGestureRecognizerState.Ended){
-            if((eventObject) != nil){
-                if((delegate) != nil){
-                    delegate?.eventCell(self, willDeleteEvent: eventObject!)
-                }
             }
         }
     }
