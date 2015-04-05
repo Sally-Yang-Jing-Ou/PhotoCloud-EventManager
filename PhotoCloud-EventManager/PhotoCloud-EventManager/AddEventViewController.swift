@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class AddEventViewController: UIViewController, UINavigationControllerDelegate, UzysAssetsPickerControllerDelegate{
+class AddEventViewController: UIViewController, UINavigationControllerDelegate, UzysAssetsPickerControllerDelegate, UITextFieldDelegate{
     @IBOutlet weak var uploadPhotosButton: UIButton?
     @IBOutlet weak var createEventButton: UIButton?
     
@@ -18,6 +18,8 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var eventDatePicker: UIDatePicker?
     
     @IBOutlet weak var photoPreviewView: PhotoPreviewView?
+    @IBOutlet weak var photoPreviewHeight: NSLayoutConstraint?
+    @IBOutlet weak var photoPreviewTopSpace: NSLayoutConstraint?
     
     var photoUrlArray: Array<String>? = []
     
@@ -26,6 +28,10 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         
         createEventButton?.layer.cornerRadius = (createEventButton?.frame.size.height)! / 2
         uploadPhotosButton?.layer.cornerRadius = (uploadPhotosButton?.frame.size.height)! / 2
+        
+        self.eventNameTextField?.delegate = self
+        self.photoPreviewHeight?.constant = 0
+        self.photoPreviewTopSpace?.constant = 0
     }
     
     @IBAction func uploadPhotos (sender: UIButton!){
@@ -54,6 +60,9 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
 
     // UIImagePickerControllerDelegate Methods
     func uzysAssetsPickerController(picker: UzysAssetsPickerController!, didFinishPickingAssets assets: [AnyObject]!) {
+        
+        self.photoPreviewHeight?.constant = 60
+        self.photoPreviewTopSpace?.constant = 22
         var assetsArray = (assets as Array<ALAsset>)
         
         photoUrlArray = DataManager.saveImages(assetsArray)
@@ -64,7 +73,13 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
             var image = DataManager.getImageFromUrl(url)
             imageArray.append(image)
         }
+        photoPreviewView?.frame = CGRectMake((photoPreviewView?.frame.origin.x)!, (photoPreviewView?.frame.origin.y)!, (photoPreviewView?.frame.size.width)!, 60)
         photoPreviewView?.preferredImageOffset = 40
         photoPreviewView?.imageArray = imageArray
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
