@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1648A41AD1C22100539881 /* Cloud.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A1648A31AD1C22100539881 /* Cloud.jpg */; };
 		5A4BF5831AB4B333003E9E42 /* AllEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BF5821AB4B333003E9E42 /* AllEventsViewController.swift */; };
 		5A4BF5851AB4D5DF003E9E42 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BF5841AB4D5DF003E9E42 /* EventCell.swift */; };
 		5A4BF5871AB4EBA5003E9E42 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BF5861AB4EBA5003E9E42 /* AddEventViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A1648A31AD1C22100539881 /* Cloud.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Cloud.jpg; path = ../../../../../../../Desktop/Cloud.jpg; sourceTree = "<group>"; };
 		5A4BF5821AB4B333003E9E42 /* AllEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllEventsViewController.swift; sourceTree = "<group>"; };
 		5A4BF5841AB4D5DF003E9E42 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		5A4BF5861AB4EBA5003E9E42 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				5A4BF5881AB4F0FF003E9E42 /* ViewControllers */,
 				C5D4F16C1ABDD9D200193538 /* Models */,
 				5AB8FD121AB49F6100FB5B75 /* Main.storyboard */,
+				5A1648A31AD1C22100539881 /* Cloud.jpg */,
 				5AB8FD171AB49F6100FB5B75 /* LaunchScreen.xib */,
 				5AB8FD151AB49F6100FB5B75 /* Images.xcassets */,
 				5AB8FD0C1AB49F6100FB5B75 /* Supporting Files */,
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB8FD141AB49F6100FB5B75 /* Main.storyboard in Resources */,
+				5A1648A41AD1C22100539881 /* Cloud.jpg in Resources */,
 				5AB8FD191AB49F6100FB5B75 /* LaunchScreen.xib in Resources */,
 				5A4BF5A41AB64008003E9E42 /* UzysAssetsPickerController.xib in Resources */,
 				5A4BF5A21AB64008003E9E42 /* UzysAssetPickerController.bundle in Resources */,
