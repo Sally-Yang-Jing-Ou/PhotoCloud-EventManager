@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -147,41 +148,50 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHP-Fj-a0C" userLabel="EventName">
-                                                                <rect key="frame" x="134" y="15" width="150" height="21"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="21" id="FXj-HE-dA8"/>
-                                                                    <constraint firstAttribute="width" constant="150" id="sOZ-uQ-P4p"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="134" y="15" width="117" height="21.5"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bS-No-BSG">
-                                                                <rect key="frame" x="134" y="49" width="150" height="21"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="150" id="6VF-b5-nI5"/>
-                                                                    <constraint firstAttribute="height" constant="21" id="zdF-kd-JTL"/>
-                                                                </constraints>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="DateLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bS-No-BSG">
+                                                                <rect key="frame" x="134" y="49" width="117" height="20.5"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLh-hO-pxe">
+                                                                <rect key="frame" x="259" y="29" width="25" height="25"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="lLh-hO-pxe" secondAttribute="height" multiplier="1:1" id="tbw-sz-Qm0"/>
+                                                                </constraints>
+                                                                <state key="normal" image="deleteEventButton"/>
+                                                                <connections>
+                                                                    <action selector="deleteEvent:" destination="4Ko-mG-frD" eventType="touchUpInside" id="R5H-mQ-Fi5"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <color key="backgroundColor" red="0.5956482670407186" green="0.82504686877774125" blue="0.93684895833333337" alpha="0.28999999999999998" colorSpace="calibratedRGB"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="BHP-Fj-a0C" firstAttribute="top" secondItem="4Ko-mG-frD" secondAttribute="top" constant="15" id="SUW-3W-K6c"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="lLh-hO-pxe" secondAttribute="bottom" constant="21" id="IaU-ot-0JH"/>
+                                                        <constraint firstItem="lLh-hO-pxe" firstAttribute="leading" secondItem="4bS-No-BSG" secondAttribute="trailing" constant="8" id="OiZ-23-ifx"/>
+                                                        <constraint firstItem="BHP-Fj-a0C" firstAttribute="leading" secondItem="M7s-rM-Ev6" secondAttribute="trailing" constant="25" id="OxL-YF-Uwy"/>
+                                                        <constraint firstItem="lLh-hO-pxe" firstAttribute="trailing" secondItem="4Ko-mG-frD" secondAttribute="trailingMargin" id="Suz-M3-uyj"/>
                                                         <constraint firstAttribute="bottom" secondItem="M7s-rM-Ev6" secondAttribute="bottom" constant="6" id="TaS-TY-HHh"/>
-                                                        <constraint firstItem="4bS-No-BSG" firstAttribute="leading" secondItem="M7s-rM-Ev6" secondAttribute="trailing" constant="25" id="YGb-ih-xd0"/>
+                                                        <constraint firstItem="BHP-Fj-a0C" firstAttribute="top" secondItem="4Ko-mG-frD" secondAttribute="topMargin" constant="7" id="VT3-Bd-mqk"/>
                                                         <constraint firstItem="M7s-rM-Ev6" firstAttribute="top" secondItem="4Ko-mG-frD" secondAttribute="top" constant="5" id="ZuS-pR-30S"/>
-                                                        <constraint firstItem="4bS-No-BSG" firstAttribute="top" secondItem="BHP-Fj-a0C" secondAttribute="bottom" constant="13" id="f12-qi-CDt"/>
+                                                        <constraint firstItem="4bS-No-BSG" firstAttribute="top" secondItem="BHP-Fj-a0C" secondAttribute="bottom" constant="13" id="bbS-4i-cNk"/>
+                                                        <constraint firstItem="4bS-No-BSG" firstAttribute="leading" secondItem="M7s-rM-Ev6" secondAttribute="trailing" constant="25" id="dCS-mj-T07"/>
                                                         <constraint firstItem="M7s-rM-Ev6" firstAttribute="leading" secondItem="4Ko-mG-frD" secondAttribute="leading" constant="9" id="ijS-bV-QZm"/>
-                                                        <constraint firstItem="BHP-Fj-a0C" firstAttribute="leading" secondItem="M7s-rM-Ev6" secondAttribute="trailing" constant="25" id="x4M-57-vAh"/>
+                                                        <constraint firstItem="lLh-hO-pxe" firstAttribute="leading" secondItem="BHP-Fj-a0C" secondAttribute="trailing" constant="8" id="rmS-Yk-0L8"/>
+                                                        <constraint firstItem="lLh-hO-pxe" firstAttribute="top" secondItem="4Ko-mG-frD" secondAttribute="topMargin" constant="21" id="vKU-ND-G6e"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="4bS-No-BSG" secondAttribute="bottom" constant="5" id="xCw-gM-ctw"/>
                                                     </constraints>
                                                     <size key="customSize" width="292" height="83"/>
                                                     <connections>
+                                                        <outlet property="deleteEventButton" destination="lLh-hO-pxe" id="Qww-TB-pUs"/>
                                                         <outlet property="eventDateLabel" destination="4bS-No-BSG" id="Qn2-SR-xuT"/>
                                                         <outlet property="eventImageView" destination="M7s-rM-Ev6" id="zJB-Wm-cZ4"/>
                                                         <outlet property="eventNameLabel" destination="BHP-Fj-a0C" id="eb5-pN-Ko2"/>
@@ -196,14 +206,12 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyc-79-tIA">
                                             <rect key="frame" x="60" y="160" width="200" height="200"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DB9-QE-ppK">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DB9-QE-ppK">
                                                     <rect key="frame" x="20" y="0.0" width="160" height="160"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="DB9-QE-ppK" secondAttribute="height" multiplier="1:1" id="xXf-Xh-WKU"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button" image="addEventButton">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
+                                                    <state key="normal" image="addEventButton"/>
                                                     <connections>
                                                         <segue destination="eAM-ok-bQl" kind="push" id="vEu-B2-BJS"/>
                                                     </connections>
@@ -211,7 +219,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeY-zN-Vt8">
                                                     <rect key="frame" x="25" y="170" width="150" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -492,7 +500,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addEventButton" width="512" height="512"/>
+        <image name="addEventButton" width="256" height="256"/>
+        <image name="deleteEventButton" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

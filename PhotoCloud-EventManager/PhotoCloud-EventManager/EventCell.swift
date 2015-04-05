@@ -18,6 +18,7 @@ class EventCell: UICollectionViewCell {
     @IBOutlet weak var eventImageView: UIImageView?
     @IBOutlet weak var eventNameLabel: UILabel?
     @IBOutlet weak var eventDateLabel: UILabel?
+    @IBOutlet weak var deleteEventButton: UIButton?
     
     var eventObject : NSManagedObject? = nil
     weak var delegate : EventCellDelegate? = nil
@@ -29,10 +30,20 @@ class EventCell: UICollectionViewCell {
         self.addGestureRecognizer(longPressGestureRecognizer)
     }
     
-    func longPressAction(recognizer : UILongPressGestureRecognizer){
+    @IBAction func deleteEvent(sender: UIButton!) {
         if((eventObject) != nil){
             if((delegate) != nil){
                 delegate?.eventCell(self, willDeleteEvent: eventObject!)
+            }
+        }
+    }
+    
+    func longPressAction(recognizer : UILongPressGestureRecognizer){
+        if(recognizer.state == UIGestureRecognizerState.Ended){
+            if((eventObject) != nil){
+                if((delegate) != nil){
+                    delegate?.eventCell(self, willDeleteEvent: eventObject!)
+                }
             }
         }
     }
