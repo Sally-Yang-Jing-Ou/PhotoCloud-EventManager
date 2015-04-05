@@ -17,10 +17,15 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var eventNameTextField: UITextField?
     @IBOutlet weak var eventDatePicker: UIDatePicker?
     
+    @IBOutlet weak var photoPreviewView: PhotoPreviewView?
+    
     var photoUrlArray: Array<String>? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createEventButton?.layer.cornerRadius = (createEventButton?.frame.size.height)! / 2
+        uploadPhotosButton?.layer.cornerRadius = (uploadPhotosButton?.frame.size.height)! / 2
     }
     
     @IBAction func uploadPhotos (sender: UIButton!){
@@ -52,5 +57,14 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         var assetsArray = (assets as Array<ALAsset>)
         
         photoUrlArray = DataManager.saveImages(assetsArray)
+        
+        //Set preview
+        var imageArray: Array<UIImage> = []
+        for url in photoUrlArray! {
+            var image = DataManager.getImageFromUrl(url)
+            imageArray.append(image)
+        }
+        photoPreviewView?.preferredImageOffset = 40
+        photoPreviewView?.imageArray = imageArray
     }
 }

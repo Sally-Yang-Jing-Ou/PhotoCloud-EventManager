@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="319"/>
+            <point key="canvasLocation" x="14" y="287"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mbE-3i-03v">
@@ -349,55 +349,99 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xv0-zn-ggK">
-                                <rect key="frame" x="23" y="165" width="94" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xv0-zn-ggK">
+                                <rect key="frame" x="16" y="124" width="93.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CPR-lQ-QwY" userLabel="EventNameTextField">
-                                <rect key="frame" x="125" y="161" width="179" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CPR-lQ-QwY" userLabel="EventNameTextField">
+                                <rect key="frame" x="118" y="120" width="186" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpc-kk-7Vk">
-                                <rect key="frame" x="142" y="211" width="36" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpc-kk-7Vk">
+                                <rect key="frame" x="142" y="177" width="36" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="iaf-aq-dML">
-                                <rect key="frame" x="0.0" y="240" width="320" height="162"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="iaf-aq-dML">
+                                <rect key="frame" x="16" y="202" width="288" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="448065568.68660003">
                                     <!--2015-03-14 22:39:28 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5J-Rc-jcT">
-                                <rect key="frame" x="109" y="440" width="103" height="30"/>
-                                <state key="normal" title="Upload Photos">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="uploadPhotos:" destination="eAM-ok-bQl" eventType="touchUpInside" id="6aS-zk-N1t"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCM-JV-i63">
-                                <rect key="frame" x="100" y="497" width="120" height="30"/>
-                                <state key="normal" title="Create this event!">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCM-JV-i63">
+                                <rect key="frame" x="93" y="506" width="135" height="35"/>
+                                <color key="backgroundColor" red="0.041875955870000002" green="0.580078125" blue="0.35743697190000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="qIZ-i1-mk1"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                <state key="normal" title="Create This Event!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="createEevent:" destination="eAM-ok-bQl" eventType="touchUpInside" id="fNA-zj-EIZ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lb7-bK-JVh" customClass="PhotoPreviewView" customModule="PhotoCloud_EventManager" customModuleProvider="target">
+                                <rect key="frame" x="16" y="383" width="288" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="GRQ-c4-Biu"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="MFx-ar-bSC"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5J-Rc-jcT">
+                                <rect key="frame" x="93" y="465" width="134" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.67019274600520928" blue="0.18857931590272181" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="cQp-9d-JpF"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                <state key="normal" title="Upload Photos">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadPhotos:" destination="eAM-ok-bQl" eventType="touchUpInside" id="6aS-zk-N1t"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xv0-zn-ggK" firstAttribute="leading" secondItem="f5C-L9-4oP" secondAttribute="leadingMargin" id="0ww-TF-HDA"/>
+                            <constraint firstItem="CPR-lQ-QwY" firstAttribute="trailing" secondItem="f5C-L9-4oP" secondAttribute="trailingMargin" id="3Rp-Eg-wqh"/>
+                            <constraint firstItem="CPR-lQ-QwY" firstAttribute="leading" secondItem="xv0-zn-ggK" secondAttribute="trailing" constant="8.5" id="5Ws-Ow-h5z"/>
+                            <constraint firstItem="CPR-lQ-QwY" firstAttribute="leading" secondItem="xv0-zn-ggK" secondAttribute="trailing" constant="8.5" id="Dho-Mn-0Wi"/>
+                            <constraint firstItem="Jpc-kk-7Vk" firstAttribute="top" secondItem="CPR-lQ-QwY" secondAttribute="bottom" constant="27" id="F8M-UC-oh3"/>
+                            <constraint firstItem="Lb7-bK-JVh" firstAttribute="top" secondItem="iaf-aq-dML" secondAttribute="bottom" constant="19" id="FGY-QS-LWx"/>
+                            <constraint firstAttribute="trailing" secondItem="J5J-Rc-jcT" secondAttribute="trailing" constant="93" id="IVz-gX-TvS"/>
+                            <constraint firstAttribute="trailing" secondItem="aCM-JV-i63" secondAttribute="trailing" constant="92" id="KTr-Yh-2Em"/>
+                            <constraint firstItem="Lb7-bK-JVh" firstAttribute="trailing" secondItem="f5C-L9-4oP" secondAttribute="trailingMargin" id="Kz5-CS-E30"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jpc-kk-7Vk" secondAttribute="trailing" constant="126" id="NFo-Fa-T9g"/>
+                            <constraint firstItem="iaf-aq-dML" firstAttribute="leading" secondItem="f5C-L9-4oP" secondAttribute="leadingMargin" id="Pd8-6D-aqd"/>
+                            <constraint firstItem="CPR-lQ-QwY" firstAttribute="top" secondItem="Amr-fj-BhQ" secondAttribute="bottom" constant="56" id="RMm-gm-DFh"/>
+                            <constraint firstItem="J5J-Rc-jcT" firstAttribute="leading" secondItem="f5C-L9-4oP" secondAttribute="leading" constant="93" id="XDm-In-97r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iaf-aq-dML" secondAttribute="trailing" id="aSJ-vn-yfR"/>
+                            <constraint firstItem="Jpc-kk-7Vk" firstAttribute="leading" secondItem="f5C-L9-4oP" secondAttribute="leadingMargin" constant="126" id="eg3-xp-RCj"/>
+                            <constraint firstItem="aCM-JV-i63" firstAttribute="top" secondItem="J5J-Rc-jcT" secondAttribute="bottom" constant="6" id="g9R-nY-SHu"/>
+                            <constraint firstItem="J5J-Rc-jcT" firstAttribute="top" secondItem="Lb7-bK-JVh" secondAttribute="bottom" constant="22" id="hfS-gD-QV9"/>
+                            <constraint firstItem="xv0-zn-ggK" firstAttribute="top" secondItem="Amr-fj-BhQ" secondAttribute="bottom" constant="60.5" id="kbL-mG-0sd"/>
+                            <constraint firstItem="aCM-JV-i63" firstAttribute="leading" secondItem="f5C-L9-4oP" secondAttribute="leading" constant="93" id="pft-Z5-sUP"/>
+                            <constraint firstItem="iaf-aq-dML" firstAttribute="top" secondItem="Jpc-kk-7Vk" secondAttribute="bottom" constant="5" id="yAZ-xj-nGV"/>
+                            <constraint firstItem="Lb7-bK-JVh" firstAttribute="leading" secondItem="f5C-L9-4oP" secondAttribute="leadingMargin" id="yI5-eG-7VF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Events" id="RDl-xp-67c"/>
                     <connections>
                         <outlet property="createEventButton" destination="aCM-JV-i63" id="DTB-PS-QFb"/>
                         <outlet property="eventDatePicker" destination="iaf-aq-dML" id="ILW-FW-9Z5"/>
                         <outlet property="eventNameTextField" destination="CPR-lQ-QwY" id="Ebk-T5-QGA"/>
+                        <outlet property="photoPreviewView" destination="Lb7-bK-JVh" id="wjF-a9-Cv1"/>
                         <outlet property="uploadPhotosButton" destination="J5J-Rc-jcT" id="vES-Cu-1ZM"/>
                     </connections>
                 </viewController>

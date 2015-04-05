@@ -26,6 +26,8 @@
 		5AB8FD161AB49F6100FB5B75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8FD151AB49F6100FB5B75 /* Images.xcassets */; };
 		5AB8FD191AB49F6100FB5B75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8FD171AB49F6100FB5B75 /* LaunchScreen.xib */; };
 		5AB8FD251AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */; };
+		C51DE2581AD1AD6F00FA6975 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DE2571AD1AD6F00FA6975 /* PhotoPreviewView.swift */; };
+		C51DE25A1AD1BC6100FA6975 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DE2591AD1BC6100FA6975 /* UIImage+Resize.swift */; };
 		C568811F1AB4EF6C001073F6 /* EventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C568811D1AB4EF6C001073F6 /* EventsModel.xcdatamodeld */; };
 		C5D4F16E1ABDDA8B00193538 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4F16D1ABDDA8B00193538 /* DataManager.swift */; };
 		C5D4F1701ABDDD4400193538 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D4F16F1ABDDD4400193538 /* UIImage+Color.swift */; };
@@ -78,6 +80,8 @@
 		5AB8FD1E1AB49F6100FB5B75 /* PhotoCloud-EventManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PhotoCloud-EventManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB8FD231AB49F6100FB5B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AB8FD241AB49F6100FB5B75 /* PhotoCloud_EventManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCloud_EventManagerTests.swift; sourceTree = "<group>"; };
+		C51DE2571AD1AD6F00FA6975 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
+		C51DE2591AD1BC6100FA6975 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		C568811E1AB4EF6C001073F6 /* EventsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsModel.xcdatamodel; sourceTree = "<group>"; };
 		C5CC1CB41ABE2AE100046763 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		C5D4F16D1ABDDA8B00193538 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			children = (
 				5A4BF5841AB4D5DF003E9E42 /* EventCell.swift */,
 				C5E38C6B1AB6262A00EB8362 /* SingleEventPhotoCell.swift */,
+				C51DE2571AD1AD6F00FA6975 /* PhotoPreviewView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				5A4BF5AC1AB6451B003E9E42 /* PhotoCloud-EventManager-Bridging-Header.h */,
 				C5D4F16D1ABDDA8B00193538 /* DataManager.swift */,
 				C5D4F16F1ABDDD4400193538 /* UIImage+Color.swift */,
+				C51DE2591AD1BC6100FA6975 /* UIImage+Resize.swift */,
 			);
 			path = "PhotoCloud-EventManager";
 			sourceTree = "<group>";
@@ -341,7 +347,9 @@
 				5A4BF5A31AB64008003E9E42 /* UzysAssetsPickerController.m in Sources */,
 				5AB8FD111AB49F6100FB5B75 /* SignInViewController.swift in Sources */,
 				C568811F1AB4EF6C001073F6 /* EventsModel.xcdatamodeld in Sources */,
+				C51DE2581AD1AD6F00FA6975 /* PhotoPreviewView.swift in Sources */,
 				5AB8FD0F1AB49F6100FB5B75 /* AppDelegate.swift in Sources */,
+				C51DE25A1AD1BC6100FA6975 /* UIImage+Resize.swift in Sources */,
 				C5D4F16E1ABDDA8B00193538 /* DataManager.swift in Sources */,
 				C5E38C661AB60ECE00EB8362 /* EventInfo.swift in Sources */,
 				5A4BF5A61AB64008003E9E42 /* UzysGroupPickerView.m in Sources */,
