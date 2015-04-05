@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "createEevent(_:)"
+            landmarkName = "uploadPhotos(_:)"
             landmarkType = "5">
             <Locations>
                <Location
@@ -93,8 +93,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
-            landmarkName = "AddEventViewController"
-            landmarkType = "3">
+            landmarkName = "uzysAssetsPickerController(_:didFinishPickingAssets:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
