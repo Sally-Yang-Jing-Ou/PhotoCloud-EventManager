@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -18,68 +18,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yI2-Ri-JvH">
-                                <rect key="frame" x="137" y="343" width="49" height="30"/>
-                                <state key="normal" title="Submit">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hPT-Le-2Wt">
+                                <rect key="frame" x="112" y="160" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maa-fu-acs">
+                                <rect key="frame" x="137" y="263" width="30" height="30"/>
+                                <state key="normal" title="OK">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="52y-Mg-m1I"/>
+                                    <action selector="okayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nzl-ed-JAR"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZb-eY-jj9" userLabel="PasswordTextField">
-                                <rect key="frame" x="112" y="281" width="173" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Rb0-1g-Gjs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NbI-y4-prT" userLabel="SignInTextField">
-                                <rect key="frame" x="112" y="197" width="173" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="o3d-qb-lgH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZf-kA-VZK">
-                                <rect key="frame" x="20" y="200" width="54" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="T6l-FU-vni"/>
-                                    <constraint firstAttribute="width" constant="54" id="lVj-2S-hiT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gU-bF-WNf">
-                                <rect key="frame" x="20" y="285" width="76" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="76" id="9Fn-tT-dkW"/>
-                                    <constraint firstAttribute="height" constant="21" id="UOr-lH-yji"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set up Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJO-qs-nS8">
+                                <rect key="frame" x="95" y="120" width="131" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="NbI-y4-prT" secondAttribute="trailing" constant="35" id="1P2-HQ-c24"/>
-                            <constraint firstItem="NbI-y4-prT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="177" id="Vlp-4A-fE5"/>
-                            <constraint firstItem="SZb-eY-jj9" firstAttribute="top" secondItem="NbI-y4-prT" secondAttribute="bottom" constant="54" id="jmh-TG-97b"/>
-                            <constraint firstAttribute="trailing" secondItem="SZb-eY-jj9" secondAttribute="trailing" constant="35" id="l0b-9E-U9S"/>
-                            <constraint firstItem="NbI-y4-prT" firstAttribute="leading" secondItem="wZf-kA-VZK" secondAttribute="trailing" constant="38" id="mmm-EE-ctd"/>
-                            <constraint firstItem="7gU-bF-WNf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="nvE-zP-xbL"/>
-                            <constraint firstItem="SZb-eY-jj9" firstAttribute="leading" secondItem="7gU-bF-WNf" secondAttribute="trailing" constant="16" id="phS-D3-e6Y"/>
-                            <constraint firstItem="wZf-kA-VZK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="180" id="rta-C2-hnU"/>
-                            <constraint firstItem="7gU-bF-WNf" firstAttribute="top" secondItem="wZf-kA-VZK" secondAttribute="bottom" constant="64" id="uly-9A-A8R"/>
-                            <constraint firstItem="wZf-kA-VZK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="zpy-QE-igR"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="submitButton" destination="yI2-Ri-JvH" id="kKD-k0-SQ6"/>
+                        <outlet property="okayButton" destination="maa-fu-acs" id="4Gv-pW-bmt"/>
+                        <outlet property="passwordTextField" destination="hPT-Le-2Wt" id="M38-rM-SLn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
