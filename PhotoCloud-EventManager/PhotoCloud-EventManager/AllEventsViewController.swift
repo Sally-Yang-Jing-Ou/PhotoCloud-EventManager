@@ -24,6 +24,7 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         backgroundImageView?.image = UIImage.imageWithColor(UIColor.grayColor(), size: backgroundImageView?.frame.size)
         eventsArray = DataManager.getAllEvents()
+        
         if(eventsArray.count > 0){
             var firstEvent = eventsArray[0];
             var photoData = firstEvent.photos as NSData?
@@ -50,12 +51,22 @@ class AllEventsViewController: UIViewController, UICollectionViewDelegateFlowLay
         }else{
             addEventButtonView?.hidden = true
         }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         allEventsCollectionView?.reloadData()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "addEventSegue" || segue.identifier == "addEventButtonSegue") {
+            var svc = segue.destinationViewController as AddEventViewController;
+            
+            svc.backgroundImage = backgroundImageView?.image
+            
+        }
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

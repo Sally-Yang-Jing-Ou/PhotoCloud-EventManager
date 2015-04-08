@@ -10,28 +10,47 @@ import Foundation
 import UIKit
 import CoreData
 
-class AddEventViewController: UIViewController, UINavigationControllerDelegate, UzysAssetsPickerControllerDelegate, UITextFieldDelegate{
+class AddEventViewController: UIViewController, UINavigationControllerDelegate, UzysAssetsPickerControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var uploadPhotosButton: UIButton?
     @IBOutlet weak var createEventButton: UIButton?
+    @IBOutlet weak var dateLabel: UILabel?
+    @IBOutlet weak var eventNameLabel: UILabel?
     
     @IBOutlet weak var eventNameTextField: UITextField?
     @IBOutlet weak var eventDatePicker: UIDatePicker?
+    
+    @IBOutlet weak var backgroundImageView: UIImageView?
     
     @IBOutlet weak var photoPreviewView: PhotoPreviewView?
     @IBOutlet weak var photoPreviewHeight: NSLayoutConstraint?
     @IBOutlet weak var photoPreviewTopSpace: NSLayoutConstraint?
     
     var photoUrlArray: Array<String>? = []
+    var backgroundImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createEventButton?.layer.cornerRadius = (createEventButton?.frame.size.height)! / 2
         uploadPhotosButton?.layer.cornerRadius = (uploadPhotosButton?.frame.size.height)! / 2
-        
+        dateLabel?.layer.cornerRadius = (uploadPhotosButton?.frame.size.height)! / 2
+        eventNameLabel?.layer.cornerRadius = (uploadPhotosButton?.frame.size.height)! / 2
+        dateLabel?.layer.masksToBounds = true
+        eventNameLabel?.layer.masksToBounds = true
+
         self.eventNameTextField?.delegate = self
         self.photoPreviewHeight?.constant = 0
         self.photoPreviewTopSpace?.constant = 0
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if((backgroundImage) != nil){
+            backgroundImageView?.image = backgroundImage
+        }
+        
+        backgroundImageView?.image = backgroundImage
     }
     
     @IBAction func uploadPhotos (sender: UIButton!){
@@ -51,18 +70,28 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
             photoData = NSKeyedArchiver.archivedDataWithRootObject(photoUrlArray!) as NSData
         }
         
-        var eventDictionary : [String : AnyObject?] = ["name" : name, "eventDate" : date, "photos" : photoData?]
+        if (name !=  "" && photoUrlArray?.count > 0) {
+            var eventDictionary : [String : AnyObject?] = ["name" : name, "eventDate" : date, "photos" : photoData?]
+            DataManager.saveEvent(eventDictionary)
+            self.navigationController?.popViewControllerAnimated(true)
+        } else if (name ==  ""){
+            var alert = UIAlertView(title: "Missing Event Name", message: "You forgot to enter an event name!", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        } else if (photoUrlArray?.count == 0) {
+            var alert = UIAlertView(title: "Missing Photos", message: "You forgot to upload photos!", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        } else {
+            var alert = UIAlertView(title: "Error", message: "Something unexpected happened, please try again", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
         
-        DataManager.saveEvent(eventDictionary)
-
-        self.navigationController?.popViewControllerAnimated(true)
     }
 
     // UIImagePickerControllerDelegate Methods
     func uzysAssetsPickerController(picker: UzysAssetsPickerController!, didFinishPickingAssets assets: [AnyObject]!) {
         
         self.photoPreviewHeight?.constant = 60
-        self.photoPreviewTopSpace?.constant = 22
+        self.photoPreviewTopSpace?.constant = 15
         var assetsArray = (assets as Array<ALAsset>)
         
         photoUrlArray = DataManager.saveImages(assetsArray)
@@ -78,8 +107,10 @@ class AddEventViewController: UIViewController, UINavigationControllerDelegate, 
         photoPreviewView?.imageArray = imageArray
     }
     
+    //MARK:TextFieldDelegate
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         self.view.endEditing(true)
         return false
     }
+    
 }
